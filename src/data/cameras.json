@@ -7,16 +7,27 @@
     "prefecture": "北海道",
     "city": "札幌市",
     "area": "大通",
-    "themes": ["city", "night", "snow"],
+    "themes": [
+      "city",
+      "night",
+      "snow"
+    ],
     "channelName": "朝日新聞LIVE",
     "channelId": "UCaHr0a1x8zmQ1dxanCeuesA",
     "videoId": "RBHsITnIoI0",
     "sourceType": "youtube",
     "status": "live",
     "embedEnabled": true,
-    "location": {"lat": 43.061, "lng": 141.356},
-    "lastCheckedAt": "2026-09-26T09:07:51.778Z",
-    "verification": {"method": "youtube-data-api", "channelIdStatus": "verified", "notes": "Successor stream verified automatically by WINDOW HEALTH."},
+    "location": {
+      "lat": 43.061,
+      "lng": 141.356
+    },
+    "lastCheckedAt": "2026-09-26T09:10:46.031Z",
+    "verification": {
+      "method": "youtube-data-api",
+      "channelIdStatus": "verified",
+      "notes": "Successor stream verified automatically by WINDOW HEALTH."
+    },
     "healthReason": null,
     "lastReplacedAt": "2026-09-26T09:07:51.778Z"
   },
@@ -28,15 +39,29 @@
     "prefecture": "北海道",
     "city": "札幌市",
     "area": "藻岩山",
-    "themes": ["mountain", "night", "snow", "city"],
+    "themes": [
+      "mountain",
+      "night",
+      "snow",
+      "city"
+    ],
     "channelName": "札幌もいわ山ロープウェイ公式",
     "channelId": "pending",
     "videoId": "jxWtJeZYndA",
     "sourceType": "youtube",
-    "status": "pending-check",
+    "status": "review",
     "embedEnabled": true,
-    "location": {"lat": 43.022, "lng": 141.322},
-    "verification": {"method": "public-youtube-result", "channelIdStatus": "pending", "notes": "Official Mt. Moiwa Ropeway stream; description states 24-hour live streaming from the summit observation deck. WINDOW HEALTH will verify current live/embed state and channelId."}
+    "location": {
+      "lat": 43.022,
+      "lng": 141.322
+    },
+    "verification": {
+      "method": "public-youtube-result",
+      "channelIdStatus": "pending",
+      "notes": "Official Mt. Moiwa Ropeway stream; description states 24-hour live streaming from the summit observation deck. WINDOW HEALTH will verify current live/embed state and channelId."
+    },
+    "lastCheckedAt": "2026-09-26T09:10:46.031Z",
+    "healthReason": "video_not_found"
   },
   {
     "cameraId": "IM-0003",
@@ -46,14 +71,28 @@
     "prefecture": "北海道",
     "city": "札幌市ほか",
     "area": "北海道各地",
-    "themes": ["city", "snow", "airport", "sea"],
+    "themes": [
+      "city",
+      "snow",
+      "airport",
+      "sea"
+    ],
     "channelName": "STV札幌テレビ放送 公式",
-    "channelId": "pending",
+    "channelId": "UCGrZAL2OKyKHj5flMIVU72A",
     "videoId": "c6Gqe6L_xZg",
     "sourceType": "youtube",
-    "status": "pending-check",
+    "status": "review",
     "embedEnabled": true,
-    "location": {"lat": 43.0618, "lng": 141.3545},
-    "verification": {"method": "public-youtube-result", "channelIdStatus": "pending", "notes": "Official STV stream cycles through cameras including Sapporo, Odori Park, New Chitose Airport, Otaru and other Hokkaido locations. WINDOW HEALTH will verify current live/embed state and channelId."}
+    "location": {
+      "lat": 43.0618,
+      "lng": 141.3545
+    },
+    "verification": {
+      "method": "youtube-data-api",
+      "channelIdStatus": "verified",
+      "notes": "Official STV stream cycles through cameras including Sapporo, Odori Park, New Chitose Airport, Otaru and other Hokkaido locations. WINDOW HEALTH will verify current live/embed state and channelId."
+    },
+    "lastCheckedAt": "2026-09-26T09:10:46.031Z",
+    "healthReason": "broadcast_none"
   }
 ]
