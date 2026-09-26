@@ -24,12 +24,12 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
       - name: Persist health state
         run: |
-          if git diff --quiet -- src/data/cameras.json; then
-            echo "No camera health changes."
+          if git diff --quiet -- src/data/cameras.json src/data/camera-history.json; then
+            echo "No WINDOW HEALTH changes."
             exit 0
           fi
           git config user.name "imarium-window-health[bot]"
           git config user.email "imarium-window-health[bot]@users.noreply.github.com"
-          git add src/data/cameras.json
+          git add src/data/cameras.json src/data/camera-history.json
           git commit -m "Update WINDOW HEALTH state"
           git push
