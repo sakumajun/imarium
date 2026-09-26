@@ -1,328 +1,38 @@
 [
   {
-    "cameraId": "IM-0001",
-    "name": "大通公園・さっぽろテレビ塔",
-    "nameEn": "Odori Park / Sapporo TV Tower",
-    "region": "hokkaido",
-    "prefecture": "北海道",
-    "city": "札幌市",
-    "area": "大通",
-    "themes": [
-      "city",
-      "night",
-      "snow"
-    ],
-    "channelName": "朝日新聞LIVE",
-    "channelId": "UCaHr0a1x8zmQ1dxanCeuesA",
-    "videoId": "RBHsITnIoI0",
-    "sourceType": "youtube",
-    "status": "live",
-    "embedEnabled": true,
-    "location": {
-      "lat": 43.061,
-      "lng": 141.356
-    },
-    "lastCheckedAt": "2026-09-26T10:11:54.485Z",
-    "verification": {
-      "method": "youtube-data-api",
-      "channelIdStatus": "verified",
-      "notes": "Successor stream verified automatically by WINDOW HEALTH."
-    },
-    "healthReason": null,
-    "lastReplacedAt": "2026-09-26T09:07:51.778Z"
+    "cameraId": "IM-0001", "name": "大通公園・さっぽろテレビ塔", "nameEn": "Odori Park / Sapporo TV Tower", "region": "hokkaido", "prefecture": "北海道", "city": "札幌市", "area": "大通", "themes": ["city","night","snow"], "channelName": "朝日新聞LIVE", "channelId": "UCaHr0a1x8zmQ1dxanCeuesA", "videoId": "RBHsITnIoI0", "sourceType": "youtube", "status": "live", "embedEnabled": true, "location": {"lat":43.061,"lng":141.356}, "lastCheckedAt": "2026-09-26T10:11:54.485Z", "verification": {"method":"youtube-data-api","channelIdStatus":"verified","notes":"Successor stream verified automatically by WINDOW HEALTH."}, "healthReason": null, "lastReplacedAt": "2026-09-26T09:07:51.778Z"
   },
   {
-    "cameraId": "IM-0002",
-    "name": "藻岩山・山頂展望台",
-    "nameEn": "Mt. Moiwa Summit Observation Deck",
-    "region": "hokkaido",
-    "prefecture": "北海道",
-    "city": "札幌市",
-    "area": "藻岩山",
-    "themes": [
-      "mountain",
-      "night",
-      "snow",
-      "city"
-    ],
-    "channelName": "札幌もいわ山ロープウェイ公式",
-    "channelId": "pending",
-    "videoId": "jxWtJeZYndA",
-    "sourceType": "youtube",
-    "status": "review",
-    "embedEnabled": true,
-    "location": {
-      "lat": 43.022,
-      "lng": 141.322
-    },
-    "verification": {
-      "method": "public-youtube-result",
-      "channelIdStatus": "pending",
-      "notes": "Previous public stream candidate is no longer returned by the YouTube Data API; retained for recovery research."
-    },
-    "lastCheckedAt": "2026-09-26T10:11:54.485Z",
-    "healthReason": "video_not_found"
+    "cameraId":"IM-0002","name":"藻岩山・山頂展望台","nameEn":"Mt. Moiwa Summit Observation Deck","region":"hokkaido","prefecture":"北海道","city":"札幌市","area":"藻岩山","themes":["mountain","night","snow","city"],"channelName":"札幌もいわ山ロープウェイ公式","channelId":"pending","videoId":"jxWtJeZYndA","sourceType":"youtube","status":"review","embedEnabled":true,"location":{"lat":43.022,"lng":141.322},"verification":{"method":"public-youtube-result","channelIdStatus":"pending","notes":"Previous public stream candidate is no longer returned by the YouTube Data API; retained for recovery research."},"lastCheckedAt":"2026-09-26T10:11:54.485Z","healthReason":"video_not_found"
   },
   {
-    "cameraId": "IM-0003",
-    "name": "北海道各地・STVライブカメラ",
-    "nameEn": "Hokkaido Live Cameras by STV",
-    "region": "hokkaido",
-    "prefecture": "北海道",
-    "city": "札幌市ほか",
-    "area": "北海道各地",
-    "themes": [
-      "city",
-      "snow",
-      "airport",
-      "sea"
-    ],
-    "channelName": "STV札幌テレビ放送 公式",
-    "channelId": "UCGrZAL2OKyKHj5flMIVU72A",
-    "videoId": "nK2OVrgK3oQ",
-    "sourceType": "youtube",
-    "status": "review",
-    "embedEnabled": true,
-    "location": {
-      "lat": 43.0618,
-      "lng": 141.3545
-    },
-    "verification": {
-      "method": "youtube-data-api",
-      "channelIdStatus": "verified",
-      "notes": "Current public STV listing found on 2026-09-26; WINDOW HEALTH must confirm live/embed state."
-    },
-    "lastCheckedAt": "2026-09-26T10:11:54.485Z",
-    "healthReason": "broadcast_upcoming"
+    "cameraId":"IM-0003","name":"北海道各地・STVライブカメラ","nameEn":"Hokkaido Live Cameras by STV","region":"hokkaido","prefecture":"北海道","city":"札幌市ほか","area":"北海道各地","themes":["city","snow","airport","sea"],"channelName":"STV札幌テレビ放送 公式","channelId":"UCGrZAL2OKyKHj5flMIVU72A","videoId":"nK2OVrgK3oQ","sourceType":"youtube","status":"review","embedEnabled":true,"location":{"lat":43.0618,"lng":141.3545},"verification":{"method":"youtube-data-api","channelIdStatus":"verified","notes":"Current public STV listing found on 2026-09-26; WINDOW HEALTH must confirm live/embed state."},"lastCheckedAt":"2026-09-26T10:11:54.485Z","healthReason":"broadcast_upcoming"
   },
   {
-    "cameraId": "IM-0004",
-    "name": "北海道各地・UHBお天気カメラ",
-    "nameEn": "Hokkaido Weather Cameras by UHB",
-    "region": "hokkaido",
-    "prefecture": "北海道",
-    "city": "北海道各地",
-    "area": "新千歳空港・札幌・小樽・函館ほか",
-    "themes": [
-      "airport",
-      "city",
-      "canal",
-      "mountain",
-      "weather",
-      "snow"
-    ],
-    "channelName": "北海道ニュースUHB",
-    "channelId": "UCpQs_warGhUzJhBdwLfF34g",
-    "videoId": "ycuqfOoAJEU",
-    "sourceType": "youtube",
-    "status": "review",
-    "embedEnabled": true,
-    "location": {
-      "lat": 42.7752,
-      "lng": 141.6923
-    },
-    "verification": {
-      "method": "youtube-data-api",
-      "channelIdStatus": "verified",
-      "notes": "Public YouTube listing describes a 24-hour live rotation including New Chitose Airport, UHB headquarters, Odori Park, Otaru Canal and Mt. Hakodate. WINDOW HEALTH must confirm current live/embed state."
-    },
-    "healthReason": "broadcast_none",
-    "lastCheckedAt": "2026-09-26T10:11:54.485Z"
+    "cameraId":"IM-0004","name":"北海道各地・UHBお天気カメラ","nameEn":"Hokkaido Weather Cameras by UHB","region":"hokkaido","prefecture":"北海道","city":"北海道各地","area":"新千歳空港・札幌・小樽・函館ほか","themes":["airport","city","canal","mountain","weather","snow"],"channelName":"北海道ニュースUHB","channelId":"UCpQs_warGhUzJhBdwLfF34g","videoId":"ycuqfOoAJEU","sourceType":"youtube","status":"review","embedEnabled":true,"location":{"lat":42.7752,"lng":141.6923},"verification":{"method":"youtube-data-api","channelIdStatus":"verified","notes":"Public YouTube listing describes a 24-hour live rotation including New Chitose Airport, UHB headquarters, Odori Park, Otaru Canal and Mt. Hakodate. WINDOW HEALTH must confirm current live/embed state."},"healthReason":"broadcast_none","lastCheckedAt":"2026-09-26T10:11:54.485Z"
   },
   {
-    "cameraId": "IM-0005",
-    "name": "函館駅前",
-    "nameEn": "Hakodate Station Front",
-    "region": "hokkaido",
-    "prefecture": "北海道",
-    "city": "函館市",
-    "area": "函館駅前",
-    "themes": [
-      "station",
-      "city",
-      "sea",
-      "night",
-      "snow",
-      "tram"
-    ],
-    "channelName": "HAKODATE LIVE CAMERA",
-    "channelId": "UCynX4LJTQ_H7_KPy7QiIS2A",
-    "videoId": "wG3nr37RwCs",
-    "sourceType": "youtube",
-    "status": "live",
-    "embedEnabled": true,
-    "location": {
-      "lat": 41.7737,
-      "lng": 140.7264
-    },
-    "verification": {
-      "method": "youtube-data-api",
-      "channelIdStatus": "verified",
-      "notes": "Public YouTube listing identifies this as a 24-hour Hakodate Station-front live camera. WINDOW HEALTH must confirm current live/embed state and channelId."
-    },
-    "healthReason": null,
-    "lastCheckedAt": "2026-09-26T10:11:54.485Z",
-    "lastReplacedAt": "2026-09-26T09:40:55.157Z"
+    "cameraId":"IM-0005","name":"函館駅前","nameEn":"Hakodate Station Front","region":"hokkaido","prefecture":"北海道","city":"函館市","area":"函館駅前","themes":["station","city","sea","night","snow","tram"],"channelName":"HAKODATE LIVE CAMERA","channelId":"UCynX4LJTQ_H7_KPy7QiIS2A","videoId":"wG3nr37RwCs","sourceType":"youtube","status":"live","embedEnabled":true,"location":{"lat":41.7737,"lng":140.7264},"verification":{"method":"youtube-data-api","channelIdStatus":"verified","notes":"Public YouTube listing identifies this as a 24-hour Hakodate Station-front live camera. WINDOW HEALTH must confirm current live/embed state and channelId."},"healthReason":null,"lastCheckedAt":"2026-09-26T10:11:54.485Z","lastReplacedAt":"2026-09-26T09:40:55.157Z"
   },
   {
-    "cameraId": "IM-0006",
-    "name": "函館山・山頂",
-    "nameEn": "Mt. Hakodate Summit",
-    "region": "hokkaido",
-    "prefecture": "北海道",
-    "city": "函館市",
-    "area": "函館山",
-    "themes": [
-      "mountain",
-      "city",
-      "night",
-      "sea",
-      "weather"
-    ],
-    "channelName": "ＦＭいるか",
-    "channelId": "UCwJceIUpEJAkS7mVUJoEmYg",
-    "videoId": "s--MDmshT3I",
-    "sourceType": "youtube",
-    "status": "live",
-    "embedEnabled": true,
-    "location": {
-      "lat": 41.759,
-      "lng": 140.704
-    },
-    "verification": {
-      "method": "youtube-data-api",
-      "channelIdStatus": "verified",
-      "notes": "函館山ロープウェイ公式サイトが24時間YouTube配信として掲載。公式ページは配信再開時にリンクが変わる場合があると明記。WINDOW HEALTHで現行状態を確認する。"
-    },
-    "healthReason": null,
-    "lastCheckedAt": "2026-09-26T10:11:54.485Z"
+    "cameraId":"IM-0006","name":"函館山・山頂","nameEn":"Mt. Hakodate Summit","region":"hokkaido","prefecture":"北海道","city":"函館市","area":"函館山","themes":["mountain","city","night","sea","weather"],"channelName":"ＦＭいるか","channelId":"UCwJceIUpEJAkS7mVUJoEmYg","videoId":"s--MDmshT3I","sourceType":"youtube","status":"live","embedEnabled":true,"location":{"lat":41.759,"lng":140.704},"verification":{"method":"youtube-data-api","channelIdStatus":"verified","notes":"函館山ロープウェイ公式サイトが24時間YouTube配信として掲載。公式ページは配信再開時にリンクが変わる場合があると明記。WINDOW HEALTHで現行状態を確認する。"},"healthReason":null,"lastCheckedAt":"2026-09-26T10:11:54.485Z"
   },
   {
-    "cameraId": "IM-0007",
-    "name": "釧路港・市街地",
-    "nameEn": "Kushiro Port / City View",
-    "region": "hokkaido",
-    "prefecture": "北海道",
-    "city": "釧路市",
-    "area": "錦町・釧路港",
-    "themes": [
-      "city",
-      "sea",
-      "port",
-      "sunset",
-      "weather"
-    ],
-    "channelName": "釧路夕焼け倶楽部& ANA釧路",
-    "channelId": "UCt8zKygoc-CuEykO34r540g",
-    "videoId": "AE61rNhuhbI",
-    "sourceType": "youtube",
-    "status": "live",
-    "embedEnabled": true,
-    "location": {
-      "lat": 42.982,
-      "lng": 144.381
-    },
-    "verification": {
-      "method": "youtube-data-api",
-      "channelIdStatus": "verified",
-      "notes": "ANAクラウンプラザホテル釧路公式サイトが24時間ライブ放送として掲載。WINDOW HEALTHで現行LIVE・埋め込み・channelIdを確認する。"
-    },
-    "healthReason": null,
-    "lastCheckedAt": "2026-09-26T10:11:54.485Z"
+    "cameraId":"IM-0007","name":"釧路港・市街地","nameEn":"Kushiro Port / City View","region":"hokkaido","prefecture":"北海道","city":"釧路市","area":"錦町・釧路港","themes":["city","sea","port","sunset","weather"],"channelName":"釧路夕焼け倶楽部& ANA釧路","channelId":"UCt8zKygoc-CuEykO34r540g","videoId":"AE61rNhuhbI","sourceType":"youtube","status":"live","embedEnabled":true,"location":{"lat":42.982,"lng":144.381},"verification":{"method":"youtube-data-api","channelIdStatus":"verified","notes":"ANAクラウンプラザホテル釧路公式サイトが24時間ライブ放送として掲載。WINDOW HEALTHで現行LIVE・埋め込み・channelIdを確認する。"},"healthReason":null,"lastCheckedAt":"2026-09-26T10:11:54.485Z"
   },
   {
-    "cameraId": "IM-0008",
-    "name": "旭川・3条通14丁目",
-    "nameEn": "Asahikawa 3-jo 14-chome",
-    "region": "hokkaido",
-    "prefecture": "北海道",
-    "city": "旭川市",
-    "area": "3条通14丁目",
-    "themes": [
-      "city",
-      "weather",
-      "snow"
-    ],
-    "channelName": "旭川ネットテレビ",
-    "channelId": "UCIQ-kh5y9I3RyiUo6LtfyPw",
-    "videoId": "QkDYUCdm2jU",
-    "sourceType": "youtube",
-    "status": "live",
-    "embedEnabled": true,
-    "location": {
-      "lat": 43.766,
-      "lng": 142.37
-    },
-    "verification": {
-      "method": "youtube-data-api",
-      "channelIdStatus": "verified",
-      "notes": "Current YouTube result published 2026-01-21 describes a 24-hour live information camera from the broadcaster's studio rooftop. WINDOW HEALTH must verify current live/embed state and channelId."
-    },
-    "lastCheckedAt": "2026-09-26T10:11:54.485Z",
-    "healthReason": null,
-    "lastReplacedAt": "2026-09-26T10:02:48.456Z"
+    "cameraId":"IM-0008","name":"旭川・3条通14丁目","nameEn":"Asahikawa 3-jo 14-chome","region":"hokkaido","prefecture":"北海道","city":"旭川市","area":"3条通14丁目","themes":["city","weather","snow"],"channelName":"旭川ネットテレビ","channelId":"UCIQ-kh5y9I3RyiUo6LtfyPw","videoId":"QkDYUCdm2jU","sourceType":"youtube","status":"live","embedEnabled":true,"location":{"lat":43.766,"lng":142.37},"verification":{"method":"youtube-data-api","channelIdStatus":"verified","notes":"Current YouTube result published 2026-01-21 describes a 24-hour live information camera from the broadcaster's studio rooftop. WINDOW HEALTH must verify current live/embed state and channelId."},"lastCheckedAt":"2026-09-26T10:11:54.485Z","healthReason":null,"lastReplacedAt":"2026-09-26T10:02:48.456Z"
   },
   {
-    "cameraId": "IM-0009",
-    "name": "旭川・7条通13丁目",
-    "nameEn": "Asahikawa 7-jo 13-chome",
-    "region": "hokkaido",
-    "prefecture": "北海道",
-    "city": "旭川市",
-    "area": "7条通13丁目",
-    "themes": [
-      "city",
-      "weather",
-      "snow"
-    ],
-    "channelName": "株式会社北海道録画センター",
-    "channelId": "UCJOKZ03IvVCbahaPloXPaww",
-    "videoId": "BV5wCRO_V8E",
-    "sourceType": "youtube",
-    "status": "review",
-    "embedEnabled": true,
-    "location": {
-      "lat": 43.775,
-      "lng": 142.375
-    },
-    "verification": {
-      "method": "youtube-data-api",
-      "channelIdStatus": "verified",
-      "notes": "Current YouTube result published 2026-03-25. Description explicitly says the URL changes after stream restarts, making it suitable for WINDOW HEALTH recovery. WINDOW HEALTH must verify current live/embed state and channelId."
-    },
-    "lastCheckedAt": "2026-09-26T10:11:54.485Z",
-    "healthReason": "broadcast_none"
+    "cameraId":"IM-0009","name":"旭川・7条通13丁目","nameEn":"Asahikawa 7-jo 13-chome","region":"hokkaido","prefecture":"北海道","city":"旭川市","area":"7条通13丁目","themes":["city","weather","snow"],"channelName":"株式会社北海道録画センター","channelId":"UCJOKZ03IvVCbahaPloXPaww","videoId":"BV5wCRO_V8E","sourceType":"youtube","status":"review","embedEnabled":true,"location":{"lat":43.775,"lng":142.375},"verification":{"method":"youtube-data-api","channelIdStatus":"verified","notes":"Current YouTube result published 2026-03-25. Description explicitly says the URL changes after stream restarts, making it suitable for WINDOW HEALTH recovery. WINDOW HEALTH must verify current live/embed state and channelId."},"lastCheckedAt":"2026-09-26T10:11:54.485Z","healthReason":"broadcast_none"
   },
   {
-    "cameraId": "IM-0010",
-    "name": "ニセコビュープラザ・羊蹄山",
-    "nameEn": "Niseko View Plaza / Mt. Yotei",
-    "region": "hokkaido",
-    "prefecture": "北海道",
-    "city": "ニセコ町",
-    "area": "元町・道の駅ニセコビュープラザ",
-    "themes": [
-      "mountain",
-      "weather",
-      "snow",
-      "road"
-    ],
-    "channelName": "ニセコリゾート観光協会",
-    "channelId": "pending",
-    "videoId": "2EtHX5LKrqw",
-    "sourceType": "youtube",
-    "status": "review",
-    "embedEnabled": true,
-    "location": {
-      "lat": 42.799376,
-      "lng": 140.702688
-    },
-    "verification": {
-      "method": "official-site-and-public-youtube-result",
-      "channelIdStatus": "pending",
-      "notes": "ニセコ町公式サイトとニセコリゾート観光協会公式サイトが道の駅ニセコビュープラザからのリアルタイム映像を案内。YouTube現行候補を2026-09-26に確認。WINDOW HEALTHでLIVE・埋め込み・channelIdを正式判定する。"
-    },
-    "lastCheckedAt": "2026-09-26T10:11:54.485Z",
-    "healthReason": "video_not_found"
+    "cameraId":"IM-0010","name":"ニセコビュープラザ・羊蹄山","nameEn":"Niseko View Plaza / Mt. Yotei","region":"hokkaido","prefecture":"北海道","city":"ニセコ町","area":"元町・道の駅ニセコビュープラザ","themes":["mountain","weather","snow","road"],"channelName":"ニセコリゾート観光協会","channelId":"pending","videoId":"2EtHX5LKrqw","sourceType":"youtube","status":"review","embedEnabled":true,"location":{"lat":42.799376,"lng":140.702688},"verification":{"method":"official-site-and-public-youtube-result","channelIdStatus":"pending","notes":"ニセコ町公式サイトとニセコリゾート観光協会公式サイトが道の駅ニセコビュープラザからのリアルタイム映像を案内。YouTube現行候補を2026-09-26に確認。WINDOW HEALTHでLIVE・埋め込み・channelIdを正式判定する。"},"lastCheckedAt":"2026-09-26T10:11:54.485Z","healthReason":"video_not_found"
+  },
+  {
+    "cameraId":"IM-0011","name":"JR帯広駅","nameEn":"JR Obihiro Station","region":"hokkaido","prefecture":"北海道","city":"帯広市","area":"西2条南13丁目・JR帯広駅","themes":["station","city","weather","snow"],"channelName":"十勝毎日新聞","channelId":"pending","videoId":"nvtohNsjbY4","sourceType":"youtube","status":"review","embedEnabled":true,"location":{"lat":42.9177,"lng":143.2020},"verification":{"method":"public-youtube-result","channelIdStatus":"pending","notes":"十勝毎日新聞の現行候補を2026-09-26に確認。説明欄はホテル日航ノースランド帯広屋上のカメラからJR帯広駅周辺をライブ配信すると明記。旧候補 iyn1BT5fKyw より新しい2026-04-26公開候補を登録し、WINDOW HEALTHで現行LIVE・埋め込み・channelIdを正式判定する。"}
+  },
+  {
+    "cameraId":"IM-0012","name":"稚内・ノシャップ／利尻島方向","nameEn":"Wakkanai Noshappu / Rishiri Island View","region":"hokkaido","prefecture":"北海道","city":"稚内市","area":"ノシャップ","themes":["sea","island","mountain","weather","snow","road"],"channelName":"WeLoveWakkanai【稚内大好き移住者チャンネル】","channelId":"pending","videoId":"dXmsGUyfsf8","sourceType":"youtube","status":"review","embedEnabled":true,"location":{"lat":45.448,"lng":141.645},"verification":{"method":"public-youtube-result-and-directory","channelIdStatus":"pending","notes":"ノシャップのキックスタート設置カメラ。YouTube検索とライブカメラDBで24時間YouTube配信を確認。配信URLが頻繁に変わるため、2025-02-04公開候補を初期値として登録しWINDOW HEALTHで後継LIVEを探索・正式判定する。"}
   }
 ]
