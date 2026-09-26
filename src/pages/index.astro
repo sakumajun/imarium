@@ -2,76 +2,26 @@
 import Layout from '../layouts/Layout.astro';
 ---
 <Layout title="IMARIUM">
-  <main class="console">
-    <header class="hud">
-      <a class="brand" href="/" aria-label="IMARIUM home">IMARIUM // LIVE GRID</a>
-      <p>SELECT A MODE</p>
-    </header>
-
-    <section class="stage" aria-label="IMARIUM navigation">
-      <div class="core" aria-hidden="true">
-        <span class="ring ring-a"></span>
-        <span class="ring ring-b"></span>
-        <span class="cross cross-x"></span>
-        <span class="cross cross-y"></span>
-        <span class="pulse"></span>
-        <strong>IMARIUM</strong>
-        <small>JAPAN LIVE INTERFACE</small>
-      </div>
-
-      <nav class="mode-grid" aria-label="Primary">
-        <a href="/explore/" data-code="01"><span>EXPLORE</span><small>日本を探索する</small></a>
-        <a href="/favorites/" data-code="02"><span>MY WINDOWS</span><small>保存した窓を見る</small></a>
-        <a href="/multiview/" data-code="03"><span>MULTI VIEW</span><small>複数地点を同時に見る</small></a>
-      </nav>
-    </section>
-
-    <div class="status"><span class="status-dot"></span>SYSTEM ONLINE // LIVE WINDOWS READY</div>
-  </main>
+<main class="explore">
+  <div class="hud"><a href="/">IMARIUM // LIVE GRID</a><p>JAPAN // INTERACTIVE GRID MAP</p></div>
+  <nav><a class="active" href="/">EXPLORE</a><a href="/favorites/">MY WINDOWS</a><a href="/multiview/">MULTI VIEW</a></nav>
+  <div id="stage"><div id="mapViewport"><div id="mapHost"></div></div></div>
+  <div id="tooltip"></div>
+  <div id="status">VECTOR MAP LOADING...</div>
+</main>
+<script>
+const prefNames=['北海道','青森県','岩手県','宮城県','秋田県','山形県','福島県','茨城県','栃木県','群馬県','埼玉県','千葉県','東京都','神奈川県','新潟県','富山県','石川県','福井県','山梨県','長野県','岐阜県','静岡県','愛知県','三重県','滋賀県','京都府','大阪府','兵庫県','奈良県','和歌山県','鳥取県','島根県','岡山県','広島県','山口県','徳島県','香川県','愛媛県','高知県','福岡県','佐賀県','長崎県','熊本県','大分県','宮崎県','鹿児島県','沖縄県'];
+const host=document.getElementById('mapHost') as HTMLElement;
+const tip=document.getElementById('tooltip') as HTMLElement;
+const statusEl=document.getElementById('status') as HTMLElement;
+function getPrefGroup(target:EventTarget|null):SVGGElement|null{return target instanceof Element?target.closest<SVGGElement>('.prefecture'):null}
+function prefCode(g:SVGGElement):number{return parseInt(g.dataset.code||g.getAttribute('data-code')||'0',10)}
+function prefName(g:SVGGElement):string{const code=prefCode(g);return prefNames[code-1]||g.getAttribute('aria-label')||'都道府県'}
+function openPref(g:SVGGElement):void{if(prefCode(g)===1){location.href='/explore/hokkaido/';return}tip.textContent=`${prefName(g)} // COMING SOON`;tip.style.display='block';window.setTimeout(()=>{tip.style.display='none'},1100)}
+async function init():Promise<void>{try{const res=await fetch('https://raw.githubusercontent.com/geolonia/japanese-prefectures/master/map-full.svg',{cache:'force-cache'});if(!res.ok)throw new Error('HTTP '+res.status);const text=await res.text();const doc=new DOMParser().parseFromString(text,'image/svg+xml');const imported=document.importNode(doc.documentElement,true);imported.removeAttribute('width');imported.removeAttribute('height');imported.setAttribute('preserveAspectRatio','xMidYMid meet');host.replaceChildren(imported);const svg=host.querySelector<SVGSVGElement>('svg');if(!svg)throw new Error('SVG root not found');const prefs=[...svg.querySelectorAll<SVGGElement>('.prefecture')];prefs.forEach((g,i)=>{if(!g.dataset.code)g.dataset.code=String(i+1).padStart(2,'0');g.setAttribute('tabindex','0');g.setAttribute('role','button');g.setAttribute('aria-label',prefName(g));if(prefCode(g)===1)g.classList.add('available')});statusEl.textContent='47 PREFECTURES ONLINE // HOKKAIDO AVAILABLE';svg.addEventListener('pointermove',e=>{const g=getPrefGroup(e.target);if(!g){tip.style.display='none';return}tip.textContent=prefName(g)+(prefCode(g)===1?' // OPEN':' // STANDBY');tip.style.display='block';tip.style.left=(e.clientX+14)+'px';tip.style.top=(e.clientY+12)+'px'});svg.addEventListener('pointerleave',()=>{tip.style.display='none'});svg.addEventListener('click',e=>{const g=getPrefGroup(e.target);if(g)openPref(g)});svg.addEventListener('keydown',e=>{const g=getPrefGroup(e.target);if(g&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openPref(g)}})}catch(err){console.error(err);statusEl.textContent='VECTOR LOAD FAILED // RETRY'}}
+void init();
+</script>
 </Layout>
-
 <style>
-  .console { min-height: 100vh; position: relative; overflow: hidden; }
-  .hud { position: fixed; z-index: 10; left: 22px; top: 20px; }
-  .brand { display: block; color: var(--cyan); text-decoration: none; font-size: 18px; font-weight: 700; letter-spacing: .28em; text-shadow: 0 0 15px rgba(78,227,255,.75); }
-  .hud p { margin: 7px 0 0; color: var(--sub); font-size: 11px; letter-spacing: .18em; }
-
-  .stage { min-height: 100vh; display: grid; place-items: center; padding: 110px 24px 90px; position: relative; }
-  .core { width: min(52vw, 520px); aspect-ratio: 1; position: absolute; display: grid; place-content: center; text-align: center; color: var(--cyan); pointer-events: none; }
-  .core::before { content: ""; position: absolute; inset: 15%; border: 1px solid rgba(78,227,255,.28); transform: rotate(45deg); box-shadow: 0 0 30px rgba(78,227,255,.06); }
-  .ring { position: absolute; inset: 4%; border: 1px solid rgba(78,227,255,.22); border-radius: 50%; }
-  .ring-a { animation: spin 24s linear infinite; border-top-color: var(--cyan); border-bottom-color: transparent; }
-  .ring-b { inset: 24%; border-style: dashed; animation: spinReverse 18s linear infinite; }
-  .cross { position: absolute; background: rgba(78,227,255,.15); }
-  .cross-x { width: 100%; height: 1px; top: 50%; left: 0; }
-  .cross-y { height: 100%; width: 1px; left: 50%; top: 0; }
-  .pulse { position: absolute; width: 8px; height: 8px; border: 1px solid var(--cyan); border-radius: 50%; left: calc(50% - 4px); top: calc(50% - 4px); box-shadow: 0 0 18px var(--cyan); animation: pulse 2.2s ease-out infinite; }
-  .core strong { font-size: clamp(1rem, 2.2vw, 1.5rem); letter-spacing: .3em; text-shadow: 0 0 18px rgba(78,227,255,.75); }
-  .core small { margin-top: 9px; color: var(--sub); font-size: 9px; letter-spacing: .22em; }
-
-  .mode-grid { z-index: 3; width: min(92vw, 1040px); display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-self: end; margin-bottom: 5vh; }
-  .mode-grid a { position: relative; min-height: 92px; padding: 19px 20px 17px; border: 1px solid rgba(78,227,255,.42); background: rgba(4,9,17,.76); color: var(--text); text-decoration: none; box-shadow: 0 0 16px rgba(78,227,255,.08); transition: transform .18s, border-color .18s, background .18s, box-shadow .18s; overflow: hidden; }
-  .mode-grid a::before { content: attr(data-code); position: absolute; right: 10px; top: 7px; color: rgba(78,227,255,.3); font-size: 10px; letter-spacing: .15em; }
-  .mode-grid a::after { content: ""; position: absolute; left: 0; top: 0; width: 26px; height: 1px; background: var(--cyan); box-shadow: 0 0 8px var(--cyan); }
-  .mode-grid a:hover, .mode-grid a:focus-visible { transform: translateY(-4px); border-color: var(--cyan); background: rgba(78,227,255,.1); box-shadow: 0 0 24px rgba(78,227,255,.25); }
-  .mode-grid span { display: block; color: var(--cyan); font-size: 14px; letter-spacing: .2em; text-shadow: 0 0 10px rgba(78,227,255,.55); }
-  .mode-grid small { display: block; margin-top: 10px; color: var(--sub); font-size: 10px; letter-spacing: .08em; }
-
-  .status { position: fixed; right: 18px; bottom: 18px; z-index: 9; color: var(--sub); font-size: 10px; letter-spacing: .12em; }
-  .status-dot { display: inline-block; width: 6px; height: 6px; margin-right: 8px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 9px var(--cyan); }
-
-  @keyframes spin { to { transform: rotate(360deg); } }
-  @keyframes spinReverse { to { transform: rotate(-360deg); } }
-  @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(8); opacity: 0; } }
-
-  @media (max-width: 700px) {
-    .hud { left: 16px; top: 16px; }
-    .brand { font-size: 14px; }
-    .stage { padding: 90px 14px 80px; }
-    .core { width: min(88vw, 420px); top: 17vh; }
-    .mode-grid { grid-template-columns: 1fr; gap: 9px; margin-bottom: 1vh; }
-    .mode-grid a { min-height: 68px; padding: 14px 16px; }
-    .mode-grid small { margin-top: 5px; }
-    .status { left: 16px; right: auto; bottom: 14px; font-size: 8px; }
-  }
+.explore{min-height:100vh;overflow:hidden}.hud{position:fixed;z-index:10;left:22px;top:20px}.hud a{margin:0;color:var(--cyan);text-decoration:none;font-size:18px;font-weight:700;letter-spacing:.22em;text-shadow:0 0 15px #4ee3ffbf}.hud p{margin:7px 0 0;color:var(--sub);font-size:11px;letter-spacing:.18em}nav{position:fixed;z-index:10;right:22px;top:24px;display:flex;gap:1.2rem}nav a{font-size:.62rem;color:var(--sub);text-decoration:none}.active{color:var(--cyan)!important}#stage{position:fixed;inset:0;display:grid;place-items:center}#mapViewport{width:min(92vw,1050px);height:min(88vh,760px);position:relative}#mapHost{position:absolute;inset:0;width:100%;height:100%}#mapHost :global(svg){width:100%;height:100%;display:block;overflow:visible}#mapHost :global(.prefecture){fill:rgba(78,227,255,.055)!important;stroke:var(--cyan)!important;stroke-width:1.25!important;vector-effect:non-scaling-stroke;cursor:pointer;transition:fill .18s,filter .18s,opacity .18s;filter:drop-shadow(0 0 2.5px rgba(78,227,255,.55))}#mapHost :global(.prefecture:hover),#mapHost :global(.prefecture:focus-visible){fill:rgba(78,227,255,.28)!important;stroke:#eaffff!important;filter:drop-shadow(0 0 9px rgba(78,227,255,1));outline:none}#mapHost :global(.prefecture.available){fill:rgba(78,227,255,.12)!important;filter:drop-shadow(0 0 5px rgba(78,227,255,.8))}#mapHost :global(.boundary-line){stroke:rgba(78,227,255,.7)!important;vector-effect:non-scaling-stroke}#tooltip{position:fixed;z-index:30;display:none;pointer-events:none;padding:7px 11px;border:1px solid var(--cyan);background:rgba(4,9,17,.92);box-shadow:0 0 16px rgba(78,227,255,.4);font-size:13px;letter-spacing:.08em}#status{position:fixed;right:18px;bottom:18px;color:var(--sub);font-size:10px;letter-spacing:.12em}#status::before{content:"";display:inline-block;width:6px;height:6px;margin-right:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 9px var(--cyan)}@media(max-width:700px){.hud{left:15px;top:14px}.hud a{font-size:12px}.hud p{font-size:8px}nav{top:58px;left:15px;right:auto;gap:.65rem}nav a{font-size:.48rem}#mapViewport{width:96vw;height:76vh}#status{font-size:8px;left:15px;right:auto}}
 </style>
