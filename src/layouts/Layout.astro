@@ -7,9 +7,9 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astr
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content={description} />
-  <meta name="color-scheme" content="light dark" />
+  <meta name="color-scheme" content="dark" />
   <link rel="canonical" href={canonicalURL} />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="IMARIUM" />
@@ -25,16 +25,67 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astr
 <body id="main-content" tabindex="-1"><a class="skip-link" href="#main-content">本文へスキップ</a><slot /></body>
 </html>
 <style is:global>
-  :root { font-family: Inter, "Noto Sans JP", system-ui, sans-serif; color: #171717; background: #f7f7f5; }
+  :root {
+    font-family: Inter, "Noto Sans JP", "Segoe UI", system-ui, sans-serif;
+    color: #d9f7ff;
+    background: #05070d;
+    --bg: #05070d;
+    --bg2: #0a0e1a;
+    --cyan: #4ee3ff;
+    --cyan2: #00d9ff;
+    --mag: #ff2fd0;
+    --text: #d9f7ff;
+    --sub: #6e9dac;
+    --panel: rgba(4,9,17,.82);
+    --line: rgba(78,227,255,.34);
+    --glow: 0 0 16px rgba(78,227,255,.28);
+  }
   * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
-  body { margin: 0; }
+  html { -webkit-text-size-adjust: 100%; min-height: 100%; background: var(--bg); }
+  body {
+    min-height: 100vh;
+    margin: 0;
+    color: var(--text);
+    background-color: var(--bg);
+    background-image:
+      radial-gradient(circle at 72% 28%, rgba(78,227,255,.07), transparent 34%),
+      linear-gradient(rgba(20,45,58,.18) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(20,45,58,.18) 1px, transparent 1px);
+    background-size: auto, 42px 42px, 42px 42px;
+  }
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    pointer-events: none;
+    background: repeating-linear-gradient(transparent 0 3px, rgba(78,227,255,.018) 4px);
+  }
   button, a { -webkit-tap-highlight-color: transparent; }
   button { font: inherit; }
-  :focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+  a { color: inherit; }
+  :focus-visible { outline: 1px solid var(--cyan); outline-offset: 4px; box-shadow: 0 0 12px rgba(78,227,255,.45); }
   body:focus { outline: none; }
-  .skip-link { position: fixed; z-index: 9999; top: .5rem; left: .5rem; transform: translateY(-160%); background: #fff; color: #111; border: 2px solid #111; padding: .7rem 1rem; text-decoration: none; }
+  .skip-link { position: fixed; z-index: 9999; top: .5rem; left: .5rem; transform: translateY(-160%); background: #05070d; color: var(--cyan); border: 1px solid var(--cyan); padding: .7rem 1rem; text-decoration: none; box-shadow: var(--glow); }
   .skip-link:focus { transform: translateY(0); }
+
+  header, .panel, .card, .dialog, .overlay, .dock, .controls, .bar {
+    border-color: var(--line) !important;
+  }
+  button, .button, .actions a, nav a {
+    letter-spacing: .12em;
+  }
+  button, .button, .actions a {
+    background: rgba(5,7,13,.76);
+    border: 1px solid var(--cyan);
+    color: var(--cyan);
+    box-shadow: 0 0 12px rgba(78,227,255,.16);
+  }
+  button:hover, .button:hover, .actions a:hover {
+    background: rgba(78,227,255,.12);
+    box-shadow: 0 0 18px rgba(78,227,255,.32);
+  }
+
   @media (max-width: 700px), (pointer: coarse) {
     header nav a,
     header > a:not(.brand),
