@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="IMARIUM | 日本の「今」を、見にいこう。">
+  <main class="hero">
+    <p class="eyebrow">IMARIUM</p>
+    <h1>日本の「今」を、<br />見にいこう。</h1>
+    <p class="lead">日本を探索して、気になる場所の窓を開く。<br />その先にあるのは、いま、この瞬間の日本。</p>
+    <nav class="actions" aria-label="Primary">
+      <a href="/explore/">EXPLORE</a>
+      <a href="/favorites/">MY WINDOWS</a>
+      <a href="/multiview/">MULTI VIEW</a>
+    </nav>
+  </main>
+</Layout>
+<style>
+  .hero { min-height: 82vh; display: grid; place-content: center; gap: 1.25rem; padding: 2rem; }
+  .eyebrow { letter-spacing: .22em; font-size: .78rem; margin: 0; opacity: .65; }
+  h1 { font-size: clamp(2.8rem, 8vw, 7rem); line-height: .98; letter-spacing: -.055em; margin: 0; font-weight: 500; }
+  .lead { line-height: 1.9; opacity: .7; }
+  .actions { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1rem; }
+  .actions a { border: 1px solid #d8d8d8; border-radius: 999px; padding: .75rem 1rem; text-decoration: none; color: inherit; }
+</style>
