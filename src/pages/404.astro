@@ -1,33 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
-<Layout
-  title="ページが見つかりません | IMARIUM"
-  description="お探しのページは見つかりませんでした。IMARIUMのEXPLOREから、日本各地の今を探せます。"
->
-  <main class="not-found">
-    <a class="brand" href="/">IMARIUM</a>
-    <section>
-      <p class="code">404 / WINDOW NOT FOUND</p>
-      <h1>この窓は、<br />見つかりませんでした。</h1>
-      <p class="lead">URLが変更されたか、ページが存在しない可能性があります。</p>
-      <div class="actions">
-        <a class="primary" href="/explore/">EXPLOREで窓を探す →</a>
-        <a href="/">トップへ戻る</a>
-      </div>
-    </section>
-  </main>
-</Layout>
-
-<style>
-  .not-found{min-height:100vh;padding:0 6vw;background:#f5f5f2;color:#171717}
-  .brand{height:80px;display:flex;align-items:center;border-bottom:1px solid #ddd;font-weight:700;letter-spacing:.18em;color:#111;text-decoration:none}
-  section{min-height:calc(100vh - 80px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:8vh 0 12vh}
-  .code{font-size:.65rem;letter-spacing:.2em;color:#888;margin:0 0 1.5rem}
-  h1{font-size:clamp(3rem,8vw,7.5rem);line-height:.94;letter-spacing:-.06em;font-weight:450;margin:0;max-width:1000px}
-  .lead{color:#777;margin:2rem 0 2.5rem}
-  .actions{display:flex;gap:.7rem;flex-wrap:wrap}
-  .actions a{border:1px solid #ccc;color:#222;text-decoration:none;padding:.9rem 1.1rem;font-size:.72rem;letter-spacing:.05em;background:#fff}
-  .actions .primary{background:#111;color:#fff;border-color:#111}
-  @media(max-width:700px){.not-found{padding:0 1rem}.brand{height:68px}section{min-height:calc(100vh - 68px)}h1{font-size:clamp(3rem,15vw,5.4rem)}.actions{width:100%}.actions a{width:100%;text-align:center}}
-</style>
+<Layout title="ページが見つかりません | IMARIUM" description="お探しのページは見つかりませんでした。IMARIUMのEXPLOREから、日本各地の今を探せます。"><main class="nf"><a class="brand" href="/">IMARIUM // LIVE GRID</a><section><div class="target" aria-hidden="true"><i></i><i></i><span></span></div><p class="code">ERROR // 404 // WINDOW NOT FOUND</p><h1>LOST<br/>WINDOW</h1><p class="lead">指定されたウィンドウを検出できませんでした。</p><div class="actions"><a class="primary" href="/explore/">SCAN EXPLORE →</a><a href="/">RETURN HOME</a></div></section></main></Layout>
+<style>.nf{min-height:100vh;padding:0 6vw}.brand{height:76px;display:flex;align-items:center;border-bottom:1px solid var(--line);font-weight:700;letter-spacing:.2em;color:var(--cyan);text-decoration:none;text-shadow:0 0 12px #4ee3ff88}section{min-height:calc(100vh - 76px);position:relative;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:8vh 0 12vh}.code{font-size:.58rem;letter-spacing:.2em;color:var(--cyan);margin:0 0 1.3rem}h1{font-size:clamp(4rem,12vw,10rem);line-height:.78;letter-spacing:.04em;font-weight:500;margin:0;text-shadow:0 0 30px #4ee3ff22}.lead{color:var(--sub);margin:2rem 0 2.2rem;font-size:.75rem;letter-spacing:.08em}.actions{display:flex;gap:.7rem;flex-wrap:wrap}.actions a{border:1px solid var(--line);color:var(--cyan);text-decoration:none;padding:.85rem 1.1rem;font-size:.62rem;letter-spacing:.1em}.actions .primary{border-color:var(--cyan);box-shadow:0 0 14px #4ee3ff22}.target{position:absolute;right:6vw;top:50%;transform:translateY(-50%);width:min(35vw,420px);aspect-ratio:1;border:1px solid #4ee3ff18;border-radius:50%}.target i{position:absolute;border:1px solid #4ee3ff22;border-radius:50%;inset:18%}.target i+ i{inset:36%}.target::before,.target::after{content:"";position:absolute;background:#4ee3ff18}.target::before{height:1px;width:120%;left:-10%;top:50%}.target::after{width:1px;height:120%;top:-10%;left:50%}.target span{position:absolute;width:8px;height:8px;left:calc(50% - 4px);top:calc(50% - 4px);border:1px solid var(--cyan);box-shadow:0 0 10px var(--cyan);animation:pulse 2s infinite}@keyframes pulse{to{transform:scale(8);opacity:0}}@media(max-width:700px){.nf{padding:0 1rem}.brand{height:64px;font-size:.7rem}section{min-height:calc(100vh - 64px)}h1{font-size:clamp(4rem,22vw,7rem)}.target{width:65vw;right:-25vw;opacity:.55}.actions{width:100%}.actions a{width:100%;text-align:center}}</style>
