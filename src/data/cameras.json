@@ -7,27 +7,16 @@
     "prefecture": "北海道",
     "city": "札幌市",
     "area": "大通",
-    "themes": [
-      "city",
-      "night",
-      "snow"
-    ],
+    "themes": ["city", "night", "snow"],
     "channelName": "朝日新聞LIVE",
     "channelId": "UCaHr0a1x8zmQ1dxanCeuesA",
     "videoId": "RBHsITnIoI0",
     "sourceType": "youtube",
     "status": "live",
     "embedEnabled": true,
-    "location": {
-      "lat": 43.061,
-      "lng": 141.356
-    },
+    "location": {"lat": 43.061, "lng": 141.356},
     "lastCheckedAt": "2026-09-26T09:10:46.031Z",
-    "verification": {
-      "method": "youtube-data-api",
-      "channelIdStatus": "verified",
-      "notes": "Successor stream verified automatically by WINDOW HEALTH."
-    },
+    "verification": {"method": "youtube-data-api", "channelIdStatus": "verified", "notes": "Successor stream verified automatically by WINDOW HEALTH."},
     "healthReason": null,
     "lastReplacedAt": "2026-09-26T09:07:51.778Z"
   },
@@ -39,27 +28,15 @@
     "prefecture": "北海道",
     "city": "札幌市",
     "area": "藻岩山",
-    "themes": [
-      "mountain",
-      "night",
-      "snow",
-      "city"
-    ],
+    "themes": ["mountain", "night", "snow", "city"],
     "channelName": "札幌もいわ山ロープウェイ公式",
     "channelId": "pending",
     "videoId": "jxWtJeZYndA",
     "sourceType": "youtube",
     "status": "review",
     "embedEnabled": true,
-    "location": {
-      "lat": 43.022,
-      "lng": 141.322
-    },
-    "verification": {
-      "method": "public-youtube-result",
-      "channelIdStatus": "pending",
-      "notes": "Official Mt. Moiwa Ropeway stream; description states 24-hour live streaming from the summit observation deck. WINDOW HEALTH will verify current live/embed state and channelId."
-    },
+    "location": {"lat": 43.022, "lng": 141.322},
+    "verification": {"method": "public-youtube-result", "channelIdStatus": "pending", "notes": "Previous public stream candidate is no longer returned by the YouTube Data API; retained for recovery research."},
     "lastCheckedAt": "2026-09-26T09:10:46.031Z",
     "healthReason": "video_not_found"
   },
@@ -71,28 +48,54 @@
     "prefecture": "北海道",
     "city": "札幌市ほか",
     "area": "北海道各地",
-    "themes": [
-      "city",
-      "snow",
-      "airport",
-      "sea"
-    ],
+    "themes": ["city", "snow", "airport", "sea"],
     "channelName": "STV札幌テレビ放送 公式",
     "channelId": "UCGrZAL2OKyKHj5flMIVU72A",
     "videoId": "c6Gqe6L_xZg",
     "sourceType": "youtube",
     "status": "review",
     "embedEnabled": true,
-    "location": {
-      "lat": 43.0618,
-      "lng": 141.3545
-    },
-    "verification": {
-      "method": "youtube-data-api",
-      "channelIdStatus": "verified",
-      "notes": "Official STV stream cycles through cameras including Sapporo, Odori Park, New Chitose Airport, Otaru and other Hokkaido locations. WINDOW HEALTH will verify current live/embed state and channelId."
-    },
+    "location": {"lat": 43.0618, "lng": 141.3545},
+    "verification": {"method": "youtube-data-api", "channelIdStatus": "verified", "notes": "Official STV multi-location stream; current registered video is not live and remains under automated recovery."},
     "lastCheckedAt": "2026-09-26T09:10:46.031Z",
     "healthReason": "broadcast_none"
+  },
+  {
+    "cameraId": "IM-0004",
+    "name": "北海道各地・UHBお天気カメラ",
+    "nameEn": "Hokkaido Weather Cameras by UHB",
+    "region": "hokkaido",
+    "prefecture": "北海道",
+    "city": "北海道各地",
+    "area": "新千歳空港・札幌・小樽・函館ほか",
+    "themes": ["airport", "city", "canal", "mountain", "weather", "snow"],
+    "channelName": "北海道ニュースUHB",
+    "channelId": "pending",
+    "videoId": "ycuqfOoAJEU",
+    "sourceType": "youtube",
+    "status": "pending",
+    "embedEnabled": true,
+    "location": {"lat": 42.7752, "lng": 141.6923},
+    "verification": {"method": "public-youtube-result", "channelIdStatus": "pending", "notes": "Public YouTube listing describes a 24-hour live rotation including New Chitose Airport, UHB headquarters, Odori Park, Otaru Canal and Mt. Hakodate. WINDOW HEALTH must confirm current live/embed state."},
+    "healthReason": "awaiting_health_check"
+  },
+  {
+    "cameraId": "IM-0005",
+    "name": "函館駅前",
+    "nameEn": "Hakodate Station Front",
+    "region": "hokkaido",
+    "prefecture": "北海道",
+    "city": "函館市",
+    "area": "函館駅前",
+    "themes": ["station", "city", "sea", "night", "snow", "tram"],
+    "channelName": "Hakodate City Live Camera",
+    "channelId": "pending",
+    "videoId": "OO-pHthvmYw",
+    "sourceType": "youtube",
+    "status": "pending",
+    "embedEnabled": true,
+    "location": {"lat": 41.7737, "lng": 140.7264},
+    "verification": {"method": "public-youtube-result", "channelIdStatus": "pending", "notes": "Public YouTube listing identifies this as a 24-hour Hakodate Station-front live camera. WINDOW HEALTH must confirm current live/embed state and channelId."},
+    "healthReason": "awaiting_health_check"
   }
 ]
