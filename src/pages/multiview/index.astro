@@ -2,7 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import cameras from '../../data/cameras.json';
 ---
-<Layout title="MULTI VIEW | IMARIUM"><main class="shell"><header><a class="brand" href="/">IMARIUM // LIVE GRID</a><nav><a href="/explore/">EXPLORE</a><a href="/favorites/">MY WINDOWS</a><a class="active" href="/multiview/">MULTI VIEW</a></nav></header>
+<Layout title="MULTI VIEW | IMARIUM"><main class="shell"><header><a class="brand" href="/">IMARIUM // LIVE GRID</a><nav><a href="/">EXPLORE</a><a href="/favorites/">MY WINDOWS</a><a class="active" href="/multiview/">MULTI VIEW</a></nav></header>
 <section class="toolbar"><div><p>03 // MULTI VIEW</p><h1>LIVE MATRIX</h1><small>MULTIPLE WINDOWS // SYNCHRONIZED VIEW</small></div><div class="controls"><span>LAYOUT</span><button data-layout="1">1</button><button data-layout="2">2</button><button data-layout="4">4</button><button data-layout="6">6</button><button data-layout="9">9</button><button data-layout="auto" class="on">AUTO</button><button id="save">＋ SAVE SET</button><button id="sets">MY SETS</button><button id="full">⛶ FULL</button></div></section>
 <section id="wall" class="wall auto"></section><section id="empty" class="empty" hidden><p>NO LIVE WINDOWS IN MATRIX</p><a href="/favorites/">SELECT FROM MY WINDOWS →</a></section>
 <dialog id="setsDialog"><div class="dialogHead"><div><small>MY SETS</small><h2>SAVED MATRIX</h2></div><button id="closeSets">×</button></div><div id="setsList"></div></dialog>
