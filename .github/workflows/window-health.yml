@@ -1,0 +1,25 @@
+name: WINDOW HEALTH
+
+on:
+  schedule:
+    - cron: '0 21 * * *' # 06:00 JST
+    - cron: '0 9 * * *'  # 18:00 JST
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm install
+      - run: npm run validate:cameras
+      - run: npm run health:cameras
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
