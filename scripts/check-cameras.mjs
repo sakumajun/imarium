@@ -19,6 +19,7 @@ async function youtube(endpoint, params) {
 }
 
 async function getVideo(videoId) {
+  if (!videoId) return null;
   const data = await youtube('videos', { part:'snippet,liveStreamingDetails,status', id:videoId });
   return data.items?.[0] ?? null;
 }
@@ -38,23 +39,32 @@ function scoreCandidate(camera, item, expectedChannelId) {
   return { score, hits };
 }
 
-async function discoverSuccessor(camera, channelId) {
-  if (!channelId) return null;
+async function discoverLiveOnChannel(camera, channelId) {
+  if (!channelId?.startsWith('UC')) return null;
   const data = await youtube('search', {
-    part:'snippet', channelId, eventType:'live', type:'video', order:'date', maxResults:10
+    part:'snippet', channelId, eventType:'live', type:'video', order:'date', maxResults:25
   });
   const ranked = (data.items ?? []).map(item => ({ item, ...scoreCandidate(camera,item,channelId) }))
     .sort((a,b) => b.score-a.score);
-  const best = ranked[0];
-  if (!best || best.score < 70) return null;
-  const id = best.item.id?.videoId;
-  if (!id || id === camera.videoId) return null;
-  const video = await getVideo(id);
-  if (!video || video.snippet?.liveBroadcastContent !== 'live' || video.status?.embeddable === false) return null;
-  return { video, score:best.score, hits:best.hits };
+  for (const candidate of ranked) {
+    if (candidate.score < 70) break;
+    const id = candidate.item.id?.videoId;
+    if (!id) continue;
+    const video = await getVideo(id);
+    if (video?.snippet?.liveBroadcastContent === 'live' && video.status?.embeddable !== false) {
+      return { video, score:candidate.score, hits:candidate.hits };
+    }
+  }
+  return null;
 }
 
-let unhealthy = 0, replaced = 0;
+function verifiedChannelId(camera, item) {
+  if (item?.snippet?.channelId) return item.snippet.channelId;
+  if (camera.channelId?.startsWith('UC')) return camera.channelId;
+  return null;
+}
+
+let unhealthy = 0, replaced = 0, discovered = 0;
 for (const camera of cameras) {
   const item = await getVideo(camera.videoId);
   camera.lastCheckedAt = now;
@@ -76,23 +86,30 @@ for (const camera of cameras) {
   }
 
   const reason = !item ? 'video_not_found' : !embeddable ? 'embedding_disabled' : `broadcast_${broadcast ?? 'unknown'}`;
-  const successor = await discoverSuccessor(camera, item?.snippet?.channelId || (camera.channelId?.startsWith('UC') ? camera.channelId : null));
+  const channelId = verifiedChannelId(camera, item);
+  const successor = await discoverLiveOnChannel(camera, channelId);
   if (successor) {
     const oldVideoId = camera.videoId;
     camera.videoId = successor.video.id;
+    camera.channelId = successor.video.snippet?.channelId ?? channelId;
+    camera.channelName = successor.video.snippet?.channelTitle ?? camera.channelName;
     camera.status = 'live';
     camera.healthReason = null;
     camera.lastReplacedAt = now;
+    camera.verification ??= {};
+    camera.verification.channelIdStatus = 'verified';
+    camera.verification.method = 'youtube-data-api-channel-live-discovery';
     history.push({ cameraId:camera.cameraId, changedAt:now, fromVideoId:oldVideoId, toVideoId:camera.videoId, reason, confidence:successor.score, matchedKeywords:successor.hits, channelId:camera.channelId });
-    console.log(`${camera.cameraId}: successor ${oldVideoId} -> ${camera.videoId} (${successor.score})`);
+    console.log(`${camera.cameraId}: channel LIVE ${oldVideoId} -> ${camera.videoId} (${successor.score})`);
     replaced++;
+    discovered++;
   } else {
     camera.status = 'review';
-    camera.healthReason = reason;
+    camera.healthReason = channelId ? `${reason};no_matching_live_on_channel` : `${reason};channel_unverified`;
     unhealthy++;
   }
 }
 
 await fs.writeFile(file, JSON.stringify(cameras, null, 2) + '\n');
 await fs.writeFile(historyFile, JSON.stringify(history.slice(-500), null, 2) + '\n');
-console.log(`WINDOW HEALTH: checked ${cameras.length}; replaced ${replaced}; ${unhealthy} require review.`);
+console.log(`WINDOW HEALTH: checked ${cameras.length}; replaced ${replaced}; channel-discovered ${discovered}; ${unhealthy} require review.`);
