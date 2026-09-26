@@ -1,10 +1,23 @@
 ---
-const { windows = [], cityName = '' } = Astro.props;
-const isLive = (w) => w.status === 'live' && w.embedEnabled !== false;
+interface WindowNode {
+  cameraId: string;
+  name: string;
+  nameEn?: string;
+  status: string;
+  embedEnabled?: boolean;
+}
+
+interface Props {
+  windows?: WindowNode[];
+  cityName?: string;
+}
+
+const { windows = [], cityName = '' } = Astro.props as Props;
+const isLive = (w: WindowNode) => w.status === 'live' && w.embedEnabled !== false;
 ---
 <section class="window-nodes" aria-label={`${cityName}のWINDOW一覧`}>
   <p>WINDOW NODES</p>
-  {windows.map((w) => (
+  {windows.map((w: WindowNode) => (
     <a class:list={['node', { live: isLive(w) }]} href={`/live/${w.cameraId}/`}>
       <span>
         <strong>{w.name}</strong>
