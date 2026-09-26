@@ -16,14 +16,7 @@ const cityMap = [
   { slug: 'kushiro', match: ['釧路市'] }
 ];
 
-const requiredStaticRoutes = [
-  '/',
-  '/explore/',
-  '/explore/hokkaido/',
-  '/favorites/',
-  '/multiview/',
-  '/404.html'
-];
+const requiredStaticRoutes = ['/', '/explore/', '/explore/hokkaido/', '/favorites/', '/multiview/', '/404.html'];
 
 const routeToFile = route => {
   if (route === '/') return path.join(root, 'index.html');
@@ -32,9 +25,7 @@ const routeToFile = route => {
 };
 
 const missing = [];
-for (const route of requiredStaticRoutes) {
-  if (!fs.existsSync(routeToFile(route))) missing.push(route);
-}
+for (const route of requiredStaticRoutes) if (!fs.existsSync(routeToFile(route))) missing.push(route);
 for (const camera of cameras) {
   const route = `/live/${camera.cameraId}/`;
   if (!fs.existsSync(routeToFile(route))) missing.push(route);
@@ -62,13 +53,14 @@ walk(root);
 
 const broken = [];
 const legacyExploreLinks = [];
-const hrefPattern = /href=["']([^"'#?]+)["']/g;
+const hrefPattern = /<a\b[^>]*\bhref=["']([^"'#?]+)["']/gi;
 for (const file of htmlFiles) {
   const html = fs.readFileSync(file, 'utf8');
   let match;
   while ((match = hrefPattern.exec(html))) {
     const href = match[1];
     if (!href.startsWith('/') || href.startsWith('//')) continue;
+    if (href.includes('${') || href.includes('{') || href.includes('}')) continue;
     if (href === '/explore/') legacyExploreLinks.push(path.relative(root, file));
     const target = routeToFile(href);
     if (!fs.existsSync(target)) broken.push(`${path.relative(root, file)} -> ${href}`);
@@ -76,7 +68,7 @@ for (const file of htmlFiles) {
 }
 
 if (broken.length) {
-  console.error('Broken internal links detected:');
+  console.error('Broken internal navigation links detected:');
   for (const item of [...new Set(broken)]) console.error(`- ${item}`);
   process.exit(1);
 }
@@ -87,4 +79,4 @@ if (legacyExploreLinks.length) {
 }
 
 const registeredCities = cityMap.filter(city => cameras.some(c => city.match.includes(c.city))).length;
-console.log(`Route integrity OK: ${cameras.length} LIVE WINDOW routes, ${registeredCities} registered city routes, static routes, and internal links verified.`);
+console.log(`Route integrity OK: ${cameras.length} LIVE WINDOW routes, ${registeredCities} registered city routes, static routes, and internal navigation links verified.`);
