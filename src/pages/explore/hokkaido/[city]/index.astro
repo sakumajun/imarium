@@ -3,7 +3,7 @@ import Layout from '../../../../layouts/Layout.astro';
 import cameras from '../../../../data/cameras.json';
 
 export function getStaticPaths(){
-  const cityDefinitions={sapporo:{name:'札幌',en:'SAPPORO',match:['札幌市','札幌市ほか']},hakodate:{name:'函館',en:'HAKODATE',match:['函館市']},otaru:{name:'小樽',en:'OTARU',match:['小樽市']},asahikawa:{name:'旭川',en:'ASAHIKAWA',match:['旭川市']},chitose:{name:'新千歳',en:'NEW CHITOSE',match:['千歳市']},wakkanai:{name:'稚内',en:'WAKKANAI',match:['稚内市']},furano:{name:'富良野',en:'FURANO',match:['富良野市']},niseko:{name:'ニセコ',en:'NISEKO',match:['ニセコ町','倶知安町']},obihiro:{name:'帯広',en:'OBIHIRO',match:['帯広市']},kushiro:{name:'釧路',en:'KUSHIRO',match:['釧路市']}};
+  const cityDefinitions={hakodate:{name:'函館',en:'HAKODATE',match:['函館市']},otaru:{name:'小樽',en:'OTARU',match:['小樽市']},asahikawa:{name:'旭川',en:'ASAHIKAWA',match:['旭川市']},chitose:{name:'新千歳',en:'NEW CHITOSE',match:['千歳市']},wakkanai:{name:'稚内',en:'WAKKANAI',match:['稚内市']},furano:{name:'富良野',en:'FURANO',match:['富良野市']},niseko:{name:'ニセコ',en:'NISEKO',match:['ニセコ町','倶知安町']},obihiro:{name:'帯広',en:'OBIHIRO',match:['帯広市']},kushiro:{name:'釧路',en:'KUSHIRO',match:['釧路市']}};
   return Object.entries(cityDefinitions).filter(([,city])=>cameras.some(c=>city.match.includes(c.city))).map(([city,data])=>({params:{city},props:{cityData:data}}));
 }
 const {cityData}=Astro.props;

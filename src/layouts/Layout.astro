@@ -6,14 +6,26 @@ const { title, description = '日本各地のライブカメラから、日本�
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content={description} />
+  <meta name="color-scheme" content="light dark" />
   <title>{title}</title>
 </head>
-<body><slot /></body>
+<body id="main-content" tabindex="-1"><a class="skip-link" href="#main-content">本文へスキップ</a><slot /></body>
 </html>
 <style is:global>
   :root { font-family: Inter, "Noto Sans JP", system-ui, sans-serif; color: #171717; background: #f7f7f5; }
   * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
   body { margin: 0; }
+  button, a { -webkit-tap-highlight-color: transparent; }
+  button { font: inherit; }
+  :focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+  body:focus { outline: none; }
+  .skip-link { position: fixed; z-index: 9999; top: .5rem; left: .5rem; transform: translateY(-160%); background: #fff; color: #111; border: 2px solid #111; padding: .7rem 1rem; text-decoration: none; }
+  .skip-link:focus { transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto !important; }
+    *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  }
 </style>
