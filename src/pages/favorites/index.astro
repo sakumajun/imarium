@@ -3,9 +3,9 @@ import Layout from '../../layouts/Layout.astro';
 import cameras from '../../data/cameras.json';
 ---
 <Layout title="MY WINDOWS | IMARIUM">
-<main class="shell"><header><a class="brand" href="/">IMARIUM // LIVE GRID</a><nav><a href="/explore/">EXPLORE</a><a class="active" href="/favorites/">MY WINDOWS</a><a href="/multiview/">MULTI VIEW</a></nav></header>
+<main class="shell"><header><a class="brand" href="/">IMARIUM // LIVE GRID</a><nav><a href="/">EXPLORE</a><a class="active" href="/favorites/">MY WINDOWS</a><a href="/multiview/">MULTI VIEW</a></nav></header>
 <section class="heading"><p>02 // MY WINDOWS</p><h1>SAVED WINDOWS</h1><span>保存したライブウィンドウへアクセスします。</span></section>
-<section id="grid" class="grid"></section><section id="empty" class="empty" hidden><p>NO SAVED WINDOWS</p><a href="/explore/">EXPLORE WINDOWS →</a></section>
+<section id="grid" class="grid"></section><section id="empty" class="empty" hidden><p>NO SAVED WINDOWS</p><a href="/">EXPLORE WINDOWS →</a></section>
 <div class="bar" id="bar" hidden><span><b id="count">0</b> WINDOWS SELECTED</span><button id="multi">OPEN MULTI VIEW →</button></div></main>
 <script define:vars={{ cameras }}>
 const safeArray=(key)=>{try{const v=JSON.parse(localStorage.getItem(key)||'[]');return Array.isArray(v)?v:[]}catch{return[]}};
