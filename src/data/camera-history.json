@@ -13,5 +13,18 @@
       "さっぽろテレビ塔"
     ],
     "channelId": "UCaHr0a1x8zmQ1dxanCeuesA"
+  },
+  {
+    "cameraId": "IM-0005",
+    "changedAt": "2026-09-26T09:40:55.157Z",
+    "fromVideoId": "OO-pHthvmYw",
+    "toVideoId": "wG3nr37RwCs",
+    "reason": "broadcast_none",
+    "confidence": 80,
+    "matchedKeywords": [
+      "函館市",
+      "函館駅前"
+    ],
+    "channelId": "UCynX4LJTQ_H7_KPy7QiIS2A"
   }
 ]
