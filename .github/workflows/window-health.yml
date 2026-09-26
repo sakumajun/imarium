@@ -18,6 +18,8 @@ jobs:
         with:
           node-version: 22
       - run: npm install
+      - name: Ingest verified camera candidates
+        run: node scripts/ingest-camera-candidates.mjs
       - name: Validate camera data before health check
         run: npm run validate:cameras
       - name: Run WINDOW HEALTH
