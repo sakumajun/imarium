@@ -1,0 +1,9 @@
+[
+  {"id":"snow","name":"雪"},
+  {"id":"sea","name":"海"},
+  {"id":"city","name":"街"},
+  {"id":"night","name":"夜景"},
+  {"id":"train","name":"鉄道"},
+  {"id":"airport","name":"空港"},
+  {"id":"mountain","name":"山・自然"}
+]
