@@ -1,0 +1,19 @@
+---
+interface Props { title: string; description?: string; }
+const { title, description = '日本各地のライブカメラから、日本の「今」を見る。' } = Astro.props;
+---
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="description" content={description} />
+  <title>{title}</title>
+</head>
+<body><slot /></body>
+</html>
+<style is:global>
+  :root { font-family: Inter, "Noto Sans JP", system-ui, sans-serif; color: #171717; background: #f7f7f5; }
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+</style>
