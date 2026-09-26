@@ -40,5 +40,18 @@
       "旭川"
     ],
     "channelId": "UCIQ-kh5y9I3RyiUo6LtfyPw"
+  },
+  {
+    "cameraId": "IM-0009",
+    "changedAt": "2026-09-26T13:34:48.276Z",
+    "fromVideoId": "BV5wCRO_V8E",
+    "toVideoId": "wqmom21n74Y",
+    "reason": "broadcast_none",
+    "confidence": 80,
+    "matchedKeywords": [
+      "旭川市",
+      "旭川"
+    ],
+    "channelId": "UCJOKZ03IvVCbahaPloXPaww"
   }
 ]
