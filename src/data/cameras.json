@@ -7,28 +7,53 @@
     "prefecture": "北海道",
     "city": "札幌市",
     "area": "大通",
-    "themes": [
-      "city",
-      "night",
-      "snow"
-    ],
+    "themes": ["city", "night", "snow"],
     "channelName": "朝日新聞LIVE",
     "channelId": "UCaHr0a1x8zmQ1dxanCeuesA",
     "videoId": "RBHsITnIoI0",
     "sourceType": "youtube",
     "status": "live",
     "embedEnabled": true,
-    "location": {
-      "lat": 43.061,
-      "lng": 141.356
-    },
+    "location": {"lat": 43.061, "lng": 141.356},
     "lastCheckedAt": "2026-09-26T09:07:51.778Z",
-    "verification": {
-      "method": "youtube-data-api",
-      "channelIdStatus": "verified",
-      "notes": "Public YouTube result identifies the stream as a live camera of Odori Park and Sapporo TV Tower from Asahi Shimbun Hokkaido bureau. channelId will be verified by YouTube Data API before WINDOW HEALTH replacement matching is enabled."
-    },
+    "verification": {"method": "youtube-data-api", "channelIdStatus": "verified", "notes": "Successor stream verified automatically by WINDOW HEALTH."},
     "healthReason": null,
     "lastReplacedAt": "2026-09-26T09:07:51.778Z"
+  },
+  {
+    "cameraId": "IM-0002",
+    "name": "藻岩山・山頂展望台",
+    "nameEn": "Mt. Moiwa Summit Observation Deck",
+    "region": "hokkaido",
+    "prefecture": "北海道",
+    "city": "札幌市",
+    "area": "藻岩山",
+    "themes": ["mountain", "night", "snow", "city"],
+    "channelName": "札幌もいわ山ロープウェイ公式",
+    "channelId": "pending",
+    "videoId": "jxWtJeZYndA",
+    "sourceType": "youtube",
+    "status": "pending-check",
+    "embedEnabled": true,
+    "location": {"lat": 43.022, "lng": 141.322},
+    "verification": {"method": "public-youtube-result", "channelIdStatus": "pending", "notes": "Official Mt. Moiwa Ropeway stream; description states 24-hour live streaming from the summit observation deck. WINDOW HEALTH will verify current live/embed state and channelId."}
+  },
+  {
+    "cameraId": "IM-0003",
+    "name": "北海道各地・STVライブカメラ",
+    "nameEn": "Hokkaido Live Cameras by STV",
+    "region": "hokkaido",
+    "prefecture": "北海道",
+    "city": "札幌市ほか",
+    "area": "北海道各地",
+    "themes": ["city", "snow", "airport", "sea"],
+    "channelName": "STV札幌テレビ放送 公式",
+    "channelId": "pending",
+    "videoId": "c6Gqe6L_xZg",
+    "sourceType": "youtube",
+    "status": "pending-check",
+    "embedEnabled": true,
+    "location": {"lat": 43.0618, "lng": 141.3545},
+    "verification": {"method": "public-youtube-result", "channelIdStatus": "pending", "notes": "Official STV stream cycles through cameras including Sapporo, Odori Park, New Chitose Airport, Otaru and other Hokkaido locations. WINDOW HEALTH will verify current live/embed state and channelId."}
   }
 ]
