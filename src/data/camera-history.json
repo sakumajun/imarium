@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "cameraId": "IM-0001",
+    "changedAt": "2026-09-26T09:07:51.778Z",
+    "fromVideoId": "fZ4XElN2McU",
+    "toVideoId": "RBHsITnIoI0",
+    "reason": "broadcast_none",
+    "confidence": 100,
+    "matchedKeywords": [
+      "札幌市",
+      "大通",
+      "大通公園",
+      "さっぽろテレビ塔"
+    ],
+    "channelId": "UCaHr0a1x8zmQ1dxanCeuesA"
+  }
+]

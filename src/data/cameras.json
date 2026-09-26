@@ -13,21 +13,22 @@
       "snow"
     ],
     "channelName": "朝日新聞LIVE",
-    "channelId": "pending-api-verification",
-    "videoId": "fZ4XElN2McU",
+    "channelId": "UCaHr0a1x8zmQ1dxanCeuesA",
+    "videoId": "RBHsITnIoI0",
     "sourceType": "youtube",
-    "status": "review",
+    "status": "live",
     "embedEnabled": true,
     "location": {
       "lat": 43.061,
       "lng": 141.356
     },
-    "lastCheckedAt": "2026-09-26T09:04:12.335Z",
+    "lastCheckedAt": "2026-09-26T09:07:51.778Z",
     "verification": {
-      "method": "public-youtube-search",
-      "channelIdStatus": "pending",
+      "method": "youtube-data-api",
+      "channelIdStatus": "verified",
       "notes": "Public YouTube result identifies the stream as a live camera of Odori Park and Sapporo TV Tower from Asahi Shimbun Hokkaido bureau. channelId will be verified by YouTube Data API before WINDOW HEALTH replacement matching is enabled."
     },
-    "healthReason": "broadcast_none"
+    "healthReason": null,
+    "lastReplacedAt": "2026-09-26T09:07:51.778Z"
   }
 ]
