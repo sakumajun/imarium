@@ -22,7 +22,7 @@
       "lat": 43.061,
       "lng": 141.356
     },
-    "lastCheckedAt": "2026-09-26T13:34:48.276Z",
+    "lastCheckedAt": "2026-09-26T23:27:54.978Z",
     "verification": {
       "method": "youtube-data-api",
       "channelIdStatus": "verified",
@@ -60,7 +60,7 @@
       "channelIdStatus": "pending",
       "notes": "Previous public stream candidate is no longer returned by the YouTube Data API; retained for recovery research."
     },
-    "lastCheckedAt": "2026-09-26T13:34:48.276Z",
+    "lastCheckedAt": "2026-09-26T23:27:54.978Z",
     "healthReason": "video_not_found;channel_unverified"
   },
   {
@@ -92,7 +92,7 @@
       "channelIdStatus": "verified",
       "notes": "Current public STV listing found on 2026-09-26; WINDOW HEALTH must confirm live/embed state."
     },
-    "lastCheckedAt": "2026-09-26T13:34:48.276Z",
+    "lastCheckedAt": "2026-09-26T23:27:54.978Z",
     "healthReason": "broadcast_upcoming;no_matching_live_on_channel"
   },
   {
@@ -127,7 +127,7 @@
       "notes": "Public YouTube listing describes a 24-hour live rotation including New Chitose Airport, UHB headquarters, Odori Park, Otaru Canal and Mt. Hakodate. WINDOW HEALTH must confirm current live/embed state."
     },
     "healthReason": "broadcast_none;no_matching_live_on_channel",
-    "lastCheckedAt": "2026-09-26T13:34:48.276Z"
+    "lastCheckedAt": "2026-09-26T23:27:54.978Z"
   },
   {
     "cameraId": "IM-0005",
@@ -161,7 +161,7 @@
       "notes": "Public YouTube listing identifies this as a 24-hour Hakodate Station-front live camera. WINDOW HEALTH must confirm current live/embed state and channelId."
     },
     "healthReason": null,
-    "lastCheckedAt": "2026-09-26T13:34:48.276Z",
+    "lastCheckedAt": "2026-09-26T23:27:54.978Z",
     "lastReplacedAt": "2026-09-26T09:40:55.157Z"
   },
   {
@@ -195,7 +195,7 @@
       "notes": "函館山ロープウェイ公式サイトが24時間YouTube配信として掲載。公式ページは配信再開時にリンクが変わる場合があると明記。WINDOW HEALTHで現行状態を確認する。"
     },
     "healthReason": null,
-    "lastCheckedAt": "2026-09-26T13:34:48.276Z"
+    "lastCheckedAt": "2026-09-26T23:27:54.978Z"
   },
   {
     "cameraId": "IM-0007",
@@ -228,7 +228,7 @@
       "notes": "ANAクラウンプラザホテル釧路公式サイトが24時間ライブ放送として掲載。WINDOW HEALTHで現行LIVE・埋め込み・channelIdを確認する。"
     },
     "healthReason": null,
-    "lastCheckedAt": "2026-09-26T13:34:48.276Z"
+    "lastCheckedAt": "2026-09-26T23:27:54.978Z"
   },
   {
     "cameraId": "IM-0008",
@@ -258,7 +258,7 @@
       "channelIdStatus": "verified",
       "notes": "Current YouTube result published 2026-01-21 describes a 24-hour live information camera from the broadcaster's studio rooftop. WINDOW HEALTH must verify current live/embed state and channelId."
     },
-    "lastCheckedAt": "2026-09-26T13:34:48.276Z",
+    "lastCheckedAt": "2026-09-26T23:27:54.978Z",
     "healthReason": null,
     "lastReplacedAt": "2026-09-26T10:02:48.456Z"
   },
@@ -286,11 +286,11 @@
       "lng": 142.375
     },
     "verification": {
-      "method": "youtube-data-api-channel-live-discovery",
+      "method": "youtube-data-api",
       "channelIdStatus": "verified",
       "notes": "Current YouTube result published 2026-03-25. Description explicitly says the URL changes after stream restarts, making it suitable for WINDOW HEALTH recovery. WINDOW HEALTH must verify current live/embed state and channelId."
     },
-    "lastCheckedAt": "2026-09-26T13:34:48.276Z",
+    "lastCheckedAt": "2026-09-26T23:27:54.978Z",
     "healthReason": null,
     "lastReplacedAt": "2026-09-26T13:34:48.276Z"
   },
@@ -323,7 +323,7 @@
       "channelIdStatus": "pending",
       "notes": "ニセコ町公式サイトとニセコリゾート観光協会公式サイトが道の駅ニセコビュープラザからのリアルタイム映像を案内。YouTube現行候補を2026-09-26に確認。WINDOW HEALTHでLIVE・埋め込み・channelIdを正式判定する。"
     },
-    "lastCheckedAt": "2026-09-26T13:34:48.276Z",
+    "lastCheckedAt": "2026-09-26T23:27:54.978Z",
     "healthReason": "video_not_found;channel_unverified"
   },
   {
@@ -355,7 +355,7 @@
       "channelIdStatus": "verified",
       "notes": "十勝毎日新聞の現行候補を2026-09-26に確認。説明欄はホテル日航ノースランド帯広屋上のカメラからJR帯広駅周辺をライブ配信すると明記。旧候補 iyn1BT5fKyw より新しい2026-04-26公開候補を登録し、WINDOW HEALTHで現行LIVE・埋め込み・channelIdを正式判定する。"
     },
-    "lastCheckedAt": "2026-09-26T13:34:48.276Z",
+    "lastCheckedAt": "2026-09-26T23:27:54.978Z",
     "healthReason": null
   },
   {
@@ -389,7 +389,7 @@
       "channelIdStatus": "verified",
       "notes": "ノシャップのキックスタート設置カメラ。YouTube検索とライブカメラDBで24時間YouTube配信を確認。配信URLが頻繁に変わるため、2025-02-04公開候補を初期値として登録しWINDOW HEALTHで後継LIVEを探索・正式判定する。"
     },
-    "lastCheckedAt": "2026-09-26T13:34:48.276Z",
+    "lastCheckedAt": "2026-09-26T23:27:54.978Z",
     "healthReason": "broadcast_none;no_matching_live_on_channel"
   },
   {
@@ -421,7 +421,7 @@
       "channelIdStatus": "verified",
       "notes": "HTBによるJR札幌駅のYouTubeライブ配信。2026-09-26時点の公開情報で24時間配信として確認。WINDOW HEALTHで現行LIVE・埋め込み・channelIdを正式判定する。"
     },
-    "lastCheckedAt": "2026-09-26T13:34:48.276Z",
+    "lastCheckedAt": "2026-09-26T23:27:54.978Z",
     "healthReason": null
   },
   {
@@ -454,7 +454,7 @@
       "channelIdStatus": "verified",
       "notes": "北海道新聞による釧路市内YouTubeライブ。幣舞橋・釧路川などを映す24時間配信として2026-09-26時点の公開情報で確認。WINDOW HEALTHで正式判定する。"
     },
-    "lastCheckedAt": "2026-09-26T13:34:48.276Z",
+    "lastCheckedAt": "2026-09-26T23:27:54.978Z",
     "healthReason": null
   }
 ]
