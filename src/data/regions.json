@@ -1,0 +1,10 @@
+[
+  {"id":"hokkaido","name":"北海道","level":"region"},
+  {"id":"tohoku","name":"東北","level":"region"},
+  {"id":"kanto","name":"関東","level":"region"},
+  {"id":"chubu","name":"中部","level":"region"},
+  {"id":"kinki","name":"近畿","level":"region"},
+  {"id":"chugoku","name":"中国","level":"region"},
+  {"id":"shikoku","name":"四国","level":"region"},
+  {"id":"kyushu-okinawa","name":"九州・沖縄","level":"region"}
+]
