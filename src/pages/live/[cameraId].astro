@@ -7,7 +7,7 @@ const isLive=camera.status==='live'&&camera.embedEnabled!==false;
 const embedUrl=`https://www.youtube-nocookie.com/embed/${camera.videoId}?autoplay=1&mute=1&playsinline=1&rel=0`;
 const youtubeUrl=`https://www.youtube.com/watch?v=${camera.videoId}`;
 const checked=camera.lastCheckedAt?new Date(camera.lastCheckedAt).toLocaleString('ja-JP',{timeZone:'Asia/Tokyo'}):'---';
-const cityRoutes={'札幌市':'sapporo','函館市':'hakodate','小樽市':'otaru','旭川市':'asahikawa','千歳市':'chitose','稚内市':'wakkanai','富良野市':'furano','ニセコ町':'niseko','倶知安町':'niseko','帯広市':'obihiro','釧路市':'kushiro'};
+const cityRoutes: Record<string,string>={'札幌市':'sapporo','函館市':'hakodate','小樽市':'otaru','旭川市':'asahikawa','千歳市':'chitose','稚内市':'wakkanai','富良野市':'furano','ニセコ町':'niseko','倶知安町':'niseko','帯広市':'obihiro','釧路市':'kushiro'};
 const citySlug=cityRoutes[camera.city];
 const cityBack=citySlug?`/explore/hokkaido/${citySlug}/`:'/explore/hokkaido/';
 ---
