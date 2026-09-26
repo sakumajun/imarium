@@ -1,23 +1,77 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
-<Layout title="IMARIUM | 日本の「今」を、見にいこう。">
-  <main class="hero">
-    <p class="eyebrow">IMARIUM</p>
-    <h1>日本の「今」を、<br />見にいこう。</h1>
-    <p class="lead">日本を探索して、気になる場所の窓を開く。<br />その先にあるのは、いま、この瞬間の日本。</p>
-    <nav class="actions" aria-label="Primary">
-      <a href="/explore/">EXPLORE</a>
-      <a href="/favorites/">MY WINDOWS</a>
-      <a href="/multiview/">MULTI VIEW</a>
-    </nav>
+<Layout title="IMARIUM">
+  <main class="console">
+    <header class="hud">
+      <a class="brand" href="/" aria-label="IMARIUM home">IMARIUM // LIVE GRID</a>
+      <p>SELECT A MODE</p>
+    </header>
+
+    <section class="stage" aria-label="IMARIUM navigation">
+      <div class="core" aria-hidden="true">
+        <span class="ring ring-a"></span>
+        <span class="ring ring-b"></span>
+        <span class="cross cross-x"></span>
+        <span class="cross cross-y"></span>
+        <span class="pulse"></span>
+        <strong>IMARIUM</strong>
+        <small>JAPAN LIVE INTERFACE</small>
+      </div>
+
+      <nav class="mode-grid" aria-label="Primary">
+        <a href="/explore/" data-code="01"><span>EXPLORE</span><small>日本を探索する</small></a>
+        <a href="/favorites/" data-code="02"><span>MY WINDOWS</span><small>保存した窓を見る</small></a>
+        <a href="/multiview/" data-code="03"><span>MULTI VIEW</span><small>複数地点を同時に見る</small></a>
+      </nav>
+    </section>
+
+    <div class="status"><span class="status-dot"></span>SYSTEM ONLINE // LIVE WINDOWS READY</div>
   </main>
 </Layout>
+
 <style>
-  .hero { min-height: 82vh; display: grid; place-content: center; gap: 1.25rem; padding: 2rem; }
-  .eyebrow { letter-spacing: .22em; font-size: .78rem; margin: 0; opacity: .65; }
-  h1 { font-size: clamp(2.8rem, 8vw, 7rem); line-height: .98; letter-spacing: -.055em; margin: 0; font-weight: 500; }
-  .lead { line-height: 1.9; opacity: .7; }
-  .actions { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1rem; }
-  .actions a { border: 1px solid #d8d8d8; border-radius: 999px; padding: .75rem 1rem; text-decoration: none; color: inherit; }
+  .console { min-height: 100vh; position: relative; overflow: hidden; }
+  .hud { position: fixed; z-index: 10; left: 22px; top: 20px; }
+  .brand { display: block; color: var(--cyan); text-decoration: none; font-size: 18px; font-weight: 700; letter-spacing: .28em; text-shadow: 0 0 15px rgba(78,227,255,.75); }
+  .hud p { margin: 7px 0 0; color: var(--sub); font-size: 11px; letter-spacing: .18em; }
+
+  .stage { min-height: 100vh; display: grid; place-items: center; padding: 110px 24px 90px; position: relative; }
+  .core { width: min(52vw, 520px); aspect-ratio: 1; position: absolute; display: grid; place-content: center; text-align: center; color: var(--cyan); pointer-events: none; }
+  .core::before { content: ""; position: absolute; inset: 15%; border: 1px solid rgba(78,227,255,.28); transform: rotate(45deg); box-shadow: 0 0 30px rgba(78,227,255,.06); }
+  .ring { position: absolute; inset: 4%; border: 1px solid rgba(78,227,255,.22); border-radius: 50%; }
+  .ring-a { animation: spin 24s linear infinite; border-top-color: var(--cyan); border-bottom-color: transparent; }
+  .ring-b { inset: 24%; border-style: dashed; animation: spinReverse 18s linear infinite; }
+  .cross { position: absolute; background: rgba(78,227,255,.15); }
+  .cross-x { width: 100%; height: 1px; top: 50%; left: 0; }
+  .cross-y { height: 100%; width: 1px; left: 50%; top: 0; }
+  .pulse { position: absolute; width: 8px; height: 8px; border: 1px solid var(--cyan); border-radius: 50%; left: calc(50% - 4px); top: calc(50% - 4px); box-shadow: 0 0 18px var(--cyan); animation: pulse 2.2s ease-out infinite; }
+  .core strong { font-size: clamp(1rem, 2.2vw, 1.5rem); letter-spacing: .3em; text-shadow: 0 0 18px rgba(78,227,255,.75); }
+  .core small { margin-top: 9px; color: var(--sub); font-size: 9px; letter-spacing: .22em; }
+
+  .mode-grid { z-index: 3; width: min(92vw, 1040px); display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-self: end; margin-bottom: 5vh; }
+  .mode-grid a { position: relative; min-height: 92px; padding: 19px 20px 17px; border: 1px solid rgba(78,227,255,.42); background: rgba(4,9,17,.76); color: var(--text); text-decoration: none; box-shadow: 0 0 16px rgba(78,227,255,.08); transition: transform .18s, border-color .18s, background .18s, box-shadow .18s; overflow: hidden; }
+  .mode-grid a::before { content: attr(data-code); position: absolute; right: 10px; top: 7px; color: rgba(78,227,255,.3); font-size: 10px; letter-spacing: .15em; }
+  .mode-grid a::after { content: ""; position: absolute; left: 0; top: 0; width: 26px; height: 1px; background: var(--cyan); box-shadow: 0 0 8px var(--cyan); }
+  .mode-grid a:hover, .mode-grid a:focus-visible { transform: translateY(-4px); border-color: var(--cyan); background: rgba(78,227,255,.1); box-shadow: 0 0 24px rgba(78,227,255,.25); }
+  .mode-grid span { display: block; color: var(--cyan); font-size: 14px; letter-spacing: .2em; text-shadow: 0 0 10px rgba(78,227,255,.55); }
+  .mode-grid small { display: block; margin-top: 10px; color: var(--sub); font-size: 10px; letter-spacing: .08em; }
+
+  .status { position: fixed; right: 18px; bottom: 18px; z-index: 9; color: var(--sub); font-size: 10px; letter-spacing: .12em; }
+  .status-dot { display: inline-block; width: 6px; height: 6px; margin-right: 8px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 9px var(--cyan); }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes spinReverse { to { transform: rotate(-360deg); } }
+  @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(8); opacity: 0; } }
+
+  @media (max-width: 700px) {
+    .hud { left: 16px; top: 16px; }
+    .brand { font-size: 14px; }
+    .stage { padding: 90px 14px 80px; }
+    .core { width: min(88vw, 420px); top: 17vh; }
+    .mode-grid { grid-template-columns: 1fr; gap: 9px; margin-bottom: 1vh; }
+    .mode-grid a { min-height: 68px; padding: 14px 16px; }
+    .mode-grid small { margin-top: 5px; }
+    .status { left: 16px; right: auto; bottom: 14px; font-size: 8px; }
+  }
 </style>
