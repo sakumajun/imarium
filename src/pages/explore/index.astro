@@ -1,0 +1,46 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="EXPLORE | IMARIUM">
+  <main class="explore-shell">
+    <header class="topbar">
+      <a class="brand" href="/">IMARIUM</a>
+      <nav><a class="active" href="/explore/">EXPLORE</a><a href="/favorites/">MY WINDOWS</a><a href="/multiview/">MULTI VIEW</a></nav>
+    </header>
+
+    <section class="intro">
+      <p class="kicker">EXPLORE JAPAN</p>
+      <h1>日本の「今」を、<br />見にいこう。</h1>
+      <p>気になる地域を選んでください。</p>
+    </section>
+
+    <section class="map-stage" aria-label="日本の地域を選ぶ">
+      <div class="japan-map">
+        <a class="region hokkaido" href="/explore/hokkaido/" aria-label="北海道を開く"><span>北海道</span><b>HOKKAIDO</b></a>
+        <button class="region tohoku" disabled><span>東北</span><b>TOHOKU</b></button>
+        <button class="region kanto" disabled><span>関東</span><b>KANTO</b></button>
+        <button class="region chubu" disabled><span>中部</span><b>CHUBU</b></button>
+        <button class="region kinki" disabled><span>近畿</span><b>KINKI</b></button>
+        <button class="region chugoku" disabled><span>中国</span><b>CHUGOKU</b></button>
+        <button class="region shikoku" disabled><span>四国</span><b>SHIKOKU</b></button>
+        <button class="region kyushu" disabled><span>九州・沖縄</span><b>KYUSHU / OKINAWA</b></button>
+      </div>
+      <p class="hint">北海道からPoCを開始しています。地図は全国展開に合わせて拡張します。</p>
+    </section>
+
+    <section class="themes" aria-label="テーマから探す">
+      <p>SCENES</p>
+      <div><button>雪</button><button>海</button><button>街</button><button>夜景</button><button>鉄道</button><button>空港</button><button>山・自然</button></div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .explore-shell{min-height:100vh;padding:0 4vw 4rem;background:radial-gradient(circle at 70% 25%,#fff 0,#f7f7f5 45%,#efefeb 100%)}
+  .topbar{height:84px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ddd}
+  .brand{font-weight:700;letter-spacing:.18em;color:inherit;text-decoration:none}.topbar nav{display:flex;gap:1.4rem}.topbar nav a{font-size:.72rem;letter-spacing:.08em;text-decoration:none;color:#777}.topbar nav .active{color:#111}
+  .intro{max-width:720px;padding:8vh 0 2rem}.kicker,.themes>p{font-size:.7rem;letter-spacing:.22em;color:#777}.intro h1{font-size:clamp(3rem,7vw,6.8rem);font-weight:500;line-height:.95;letter-spacing:-.06em;margin:.6rem 0 1.4rem}.intro>p:last-child{color:#777}
+  .map-stage{max-width:1100px;margin:0 auto}.japan-map{position:relative;min-height:560px}.region{position:absolute;display:grid;place-content:center;text-align:center;border:1px solid #bbb;background:rgba(255,255,255,.7);color:#333;text-decoration:none;box-shadow:0 18px 50px rgba(0,0,0,.06);transition:.3s ease;clip-path:polygon(14% 3%,88% 0,100% 31%,89% 92%,48% 100%,6% 80%,0 31%)}.region span{font-size:1rem}.region b{font-size:.55rem;letter-spacing:.14em;margin-top:.35rem;color:#888}.region:disabled{opacity:.42}.hokkaido{width:210px;height:145px;right:6%;top:0}.hokkaido:hover{transform:translateY(-8px) scale(1.04);background:#fff;border-color:#555}.tohoku{width:115px;height:190px;right:25%;top:150px}.kanto{width:150px;height:110px;right:28%;top:345px}.chubu{width:175px;height:125px;right:43%;top:325px}.kinki{width:135px;height:105px;right:56%;top:365px}.chugoku{width:185px;height:90px;right:68%;top:350px}.shikoku{width:145px;height:75px;right:62%;top:460px}.kyushu{width:145px;height:160px;left:3%;top:390px}.hint{text-align:center;color:#999;font-size:.75rem}
+  .themes{max-width:1100px;margin:4rem auto 0;border-top:1px solid #ddd;padding-top:1.5rem}.themes div{display:flex;flex-wrap:wrap;gap:.65rem}.themes button{border:1px solid #d5d5d5;background:rgba(255,255,255,.6);border-radius:999px;padding:.7rem 1rem;color:#555}
+  @media(max-width:760px){.explore-shell{padding:0 1rem 3rem}.topbar{height:68px}.topbar nav{gap:.7rem}.topbar nav a{font-size:.56rem}.intro{padding-top:4rem}.japan-map{min-height:500px;transform:scale(.92);transform-origin:top center}.hokkaido{width:150px;height:110px}.tohoku{right:20%;width:90px}.kanto{right:20%;width:115px}.chubu{right:42%;width:135px}.kinki{right:60%;width:105px}.chugoku{right:70%;width:130px}.shikoku{right:59%;width:110px}.kyushu{left:0;width:110px}}
+</style>
