@@ -3,22 +3,24 @@ import Layout from '../../../layouts/Layout.astro';
 import cameras from '../../../data/cameras.json';
 
 const places = [
-  {id:'wakkanai',name:'稚内',en:'WAKKANAI',x:'52%',y:'8%',match:['稚内市'],page:false},
-  {id:'asahikawa',name:'旭川',en:'ASAHIKAWA',x:'58%',y:'36%',match:['旭川市'],page:false},
-  {id:'furano',name:'富良野',en:'FURANO',x:'55%',y:'53%',match:['富良野市'],page:false},
-  {id:'sapporo',name:'札幌',en:'SAPPORO',x:'31%',y:'55%',match:['札幌市','札幌市ほか'],page:true},
-  {id:'otaru',name:'小樽',en:'OTARU',x:'22%',y:'51%',match:['小樽市'],page:false},
-  {id:'chitose',name:'新千歳',en:'NEW CHITOSE',x:'42%',y:'65%',match:['千歳市'],page:false},
-  {id:'niseko',name:'ニセコ',en:'NISEKO',x:'20%',y:'67%',match:['ニセコ町','倶知安町'],page:false},
-  {id:'hakodate',name:'函館',en:'HAKODATE',x:'18%',y:'86%',match:['函館市'],page:false},
-  {id:'obihiro',name:'帯広',en:'OBIHIRO',x:'69%',y:'61%',match:['帯広市'],page:false},
-  {id:'kushiro',name:'釧路',en:'KUSHIRO',x:'83%',y:'63%',match:['釧路市'],page:false}
+  {id:'wakkanai',name:'稚内',en:'WAKKANAI',x:'52%',y:'8%',match:['稚内市']},
+  {id:'asahikawa',name:'旭川',en:'ASAHIKAWA',x:'58%',y:'36%',match:['旭川市']},
+  {id:'furano',name:'富良野',en:'FURANO',x:'55%',y:'53%',match:['富良野市']},
+  {id:'sapporo',name:'札幌',en:'SAPPORO',x:'31%',y:'55%',match:['札幌市','札幌市ほか']},
+  {id:'otaru',name:'小樽',en:'OTARU',x:'22%',y:'51%',match:['小樽市']},
+  {id:'chitose',name:'新千歳',en:'NEW CHITOSE',x:'42%',y:'65%',match:['千歳市']},
+  {id:'niseko',name:'ニセコ',en:'NISEKO',x:'20%',y:'67%',match:['ニセコ町','倶知安町']},
+  {id:'hakodate',name:'函館',en:'HAKODATE',x:'18%',y:'86%',match:['函館市']},
+  {id:'obihiro',name:'帯広',en:'OBIHIRO',x:'69%',y:'61%',match:['帯広市']},
+  {id:'kushiro',name:'釧路',en:'KUSHIRO',x:'83%',y:'63%',match:['釧路市']}
 ].map(place => {
   const registered = cameras.filter(c => place.match.includes(c.city));
   const live = registered.filter(c => c.status === 'live' && c.embedEnabled !== false);
   return {...place, registeredCount: registered.length, liveCount: live.length};
 });
-const visiblePlaces = places.filter(place => place.page);
+// [city]/index.astro generates a page only for an area that has at least one registered camera.
+// Therefore the map follows the same condition: no destination page = no marker.
+const visiblePlaces = places.filter(place => place.registeredCount > 0);
 const totalLive = cameras.filter(c => c.region === 'hokkaido' && c.status === 'live' && c.embedEnabled !== false).length;
 const totalRegistered = cameras.filter(c => c.region === 'hokkaido').length;
 ---
