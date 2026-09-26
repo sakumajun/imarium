@@ -51,14 +51,14 @@
     "themes": ["city", "snow", "airport", "sea"],
     "channelName": "STV札幌テレビ放送 公式",
     "channelId": "UCGrZAL2OKyKHj5flMIVU72A",
-    "videoId": "c6Gqe6L_xZg",
+    "videoId": "nK2OVrgK3oQ",
     "sourceType": "youtube",
-    "status": "review",
+    "status": "pending",
     "embedEnabled": true,
     "location": {"lat": 43.0618, "lng": 141.3545},
-    "verification": {"method": "youtube-data-api", "channelIdStatus": "verified", "notes": "Official STV multi-location stream; current registered video is not live and remains under automated recovery."},
+    "verification": {"method": "public-youtube-result", "channelIdStatus": "verified", "notes": "Current public STV listing found on 2026-09-26; WINDOW HEALTH must confirm live/embed state."},
     "lastCheckedAt": "2026-09-26T09:10:46.031Z",
-    "healthReason": "broadcast_none"
+    "healthReason": "awaiting_health_check"
   },
   {
     "cameraId": "IM-0004",
@@ -96,6 +96,44 @@
     "embedEnabled": true,
     "location": {"lat": 41.7737, "lng": 140.7264},
     "verification": {"method": "public-youtube-result", "channelIdStatus": "pending", "notes": "Public YouTube listing identifies this as a 24-hour Hakodate Station-front live camera. WINDOW HEALTH must confirm current live/embed state and channelId."},
+    "healthReason": "awaiting_health_check"
+  },
+  {
+    "cameraId": "IM-0006",
+    "name": "函館山・山頂",
+    "nameEn": "Mt. Hakodate Summit",
+    "region": "hokkaido",
+    "prefecture": "北海道",
+    "city": "函館市",
+    "area": "函館山",
+    "themes": ["mountain", "city", "night", "sea", "weather"],
+    "channelName": "FMいるか / 函館山ロープウェイ",
+    "channelId": "pending",
+    "videoId": "s--MDmshT3I",
+    "sourceType": "youtube",
+    "status": "pending",
+    "embedEnabled": true,
+    "location": {"lat": 41.759, "lng": 140.704},
+    "verification": {"method": "official-site-youtube-embed", "channelIdStatus": "pending", "notes": "函館山ロープウェイ公式サイトが24時間YouTube配信として掲載。公式ページは配信再開時にリンクが変わる場合があると明記。WINDOW HEALTHで現行状態を確認する。"},
+    "healthReason": "awaiting_health_check"
+  },
+  {
+    "cameraId": "IM-0007",
+    "name": "釧路港・市街地",
+    "nameEn": "Kushiro Port / City View",
+    "region": "hokkaido",
+    "prefecture": "北海道",
+    "city": "釧路市",
+    "area": "錦町・釧路港",
+    "themes": ["city", "sea", "port", "sunset", "weather"],
+    "channelName": "釧路夕焼け倶楽部 / ANAクラウンプラザホテル釧路",
+    "channelId": "pending",
+    "videoId": "AE61rNhuhbI",
+    "sourceType": "youtube",
+    "status": "pending",
+    "embedEnabled": true,
+    "location": {"lat": 42.982, "lng": 144.381},
+    "verification": {"method": "official-site-youtube-embed", "channelIdStatus": "pending", "notes": "ANAクラウンプラザホテル釧路公式サイトが24時間ライブ放送として掲載。WINDOW HEALTHで現行LIVE・埋め込み・channelIdを確認する。"},
     "healthReason": "awaiting_health_check"
   }
 ]
