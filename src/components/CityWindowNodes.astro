@@ -1,0 +1,19 @@
+---
+const { windows = [], cityName = '' } = Astro.props;
+const isLive = (w) => w.status === 'live' && w.embedEnabled !== false;
+---
+<section class="window-nodes" aria-label={`${cityName}のWINDOW一覧`}>
+  <p>WINDOW NODES</p>
+  {windows.map((w) => (
+    <a class:list={['node', { live: isLive(w) }]} href={`/live/${w.cameraId}/`}>
+      <span>
+        <strong>{w.name}</strong>
+        <small>{w.nameEn}</small>
+      </span>
+      <b>{isLive(w) ? '● LIVE' : '○ CHECK'}</b>
+    </a>
+  ))}
+</section>
+<style>
+.window-nodes{display:grid;gap:.5rem;margin-top:1rem}.window-nodes>p{font-size:.55rem;letter-spacing:.16em;color:var(--sub);margin:.5rem 0}.node{width:100%;min-height:58px;box-sizing:border-box;border:1px solid var(--line);background:#050912cc;color:#60757c;padding:.75rem;display:flex;align-items:center;justify-content:space-between;text-align:left;text-decoration:none;transition:.18s}.node.live{color:var(--cyan);border-color:#4ee3ff55}.node:hover,.node:focus-visible{border-color:var(--cyan);background:#4ee3ff0b;box-shadow:0 0 15px #4ee3ff16;outline:none}.node strong,.node small{display:block}.node strong{font-size:.8rem}.node small{margin-top:.2rem;color:var(--sub);font-size:.52rem;letter-spacing:.08em}.node b{font-size:.5rem}@media(max-width:700px){.node{min-height:58px}}
+</style>
