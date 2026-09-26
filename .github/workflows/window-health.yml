@@ -18,11 +18,25 @@ jobs:
         with:
           node-version: 22
       - run: npm install
-      - run: npm run validate:cameras
-      - run: npm run health:cameras
+      - name: Validate camera data before health check
+        run: npm run validate:cameras
+      - name: Run WINDOW HEALTH
+        run: npm run health:cameras
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
-      - name: Persist health state
+      - name: Validate updated camera data
+        run: npm run validate:cameras
+      - name: Build site with updated WINDOW state
+        run: npm run build
+      - name: Verify generated routes
+        run: |
+          test -f dist/index.html
+          test -f dist/explore/index.html
+          test -f dist/explore/hokkaido/index.html
+          test -f dist/favorites/index.html
+          test -f dist/multiview/index.html
+          node scripts/check-generated-routes.mjs
+      - name: Persist health state only after validation
         run: |
           if git diff --quiet -- src/data/cameras.json src/data/camera-history.json; then
             echo "No WINDOW HEALTH changes."
