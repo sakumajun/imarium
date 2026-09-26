@@ -1,0 +1,46 @@
+[
+  {
+    "cameraId": "IM-0013",
+    "name": "JR札幌駅・HTB",
+    "nameEn": "JR Sapporo Station by HTB",
+    "region": "hokkaido",
+    "prefecture": "北海道",
+    "city": "札幌市",
+    "area": "JR札幌駅",
+    "themes": ["station", "city", "weather", "snow"],
+    "channelName": "HTB北海道テレビ",
+    "channelId": "pending",
+    "videoId": "gaNLXSEUVRw",
+    "sourceType": "youtube",
+    "status": "review",
+    "embedEnabled": true,
+    "location": {"lat": 43.0688, "lng": 141.3534},
+    "verification": {
+      "method": "public-youtube-and-current-camera-directory",
+      "channelIdStatus": "pending",
+      "notes": "HTBによるJR札幌駅のYouTubeライブ配信。2026-09-26時点の公開情報で24時間配信として確認。WINDOW HEALTHで現行LIVE・埋め込み・channelIdを正式判定する。"
+    }
+  },
+  {
+    "cameraId": "IM-0014",
+    "name": "釧路・幣舞橋",
+    "nameEn": "Kushiro Nusamai Bridge",
+    "region": "hokkaido",
+    "prefecture": "北海道",
+    "city": "釧路市",
+    "area": "幣舞町・幣舞橋",
+    "themes": ["city", "river", "sunset", "weather", "snow"],
+    "channelName": "北海道新聞",
+    "channelId": "pending",
+    "videoId": "4bus7bosciE",
+    "sourceType": "youtube",
+    "status": "review",
+    "embedEnabled": true,
+    "location": {"lat": 42.9814, "lng": 144.3855},
+    "verification": {
+      "method": "public-youtube-and-current-camera-directory",
+      "channelIdStatus": "pending",
+      "notes": "北海道新聞による釧路市内YouTubeライブ。幣舞橋・釧路川などを映す24時間配信として2026-09-26時点の公開情報で確認。WINDOW HEALTHで正式判定する。"
+    }
+  }
+]
