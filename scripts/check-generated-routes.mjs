@@ -16,19 +16,75 @@ const cityMap = [
   { slug: 'kushiro', match: ['釧路市'] }
 ];
 
+const requiredStaticRoutes = [
+  '/',
+  '/explore/',
+  '/explore/hokkaido/',
+  '/favorites/',
+  '/multiview/',
+  '/404.html'
+];
+
+const routeToFile = route => {
+  if (route === '/') return path.join(root, 'index.html');
+  if (route === '/404.html') return path.join(root, '404.html');
+  return path.join(root, route.replace(/^\//, ''), 'index.html');
+};
+
 const missing = [];
+for (const route of requiredStaticRoutes) {
+  if (!fs.existsSync(routeToFile(route))) missing.push(route);
+}
 for (const camera of cameras) {
-  const file = path.join(root, 'live', camera.cameraId, 'index.html');
-  if (!fs.existsSync(file)) missing.push(`/live/${camera.cameraId}/`);
+  const route = `/live/${camera.cameraId}/`;
+  if (!fs.existsSync(routeToFile(route))) missing.push(route);
 }
 for (const city of cityMap) {
   if (!cameras.some(c => city.match.includes(c.city))) continue;
-  const file = path.join(root, 'explore', 'hokkaido', city.slug, 'index.html');
-  if (!fs.existsSync(file)) missing.push(`/explore/hokkaido/${city.slug}/`);
+  const route = `/explore/hokkaido/${city.slug}/`;
+  if (!fs.existsSync(routeToFile(route))) missing.push(route);
 }
 if (missing.length) {
   console.error('Missing generated routes:');
   for (const route of missing) console.error(`- ${route}`);
   process.exit(1);
 }
-console.log(`Route integrity OK: ${cameras.length} LIVE WINDOW routes and all registered city routes exist.`);
+
+const htmlFiles = [];
+const walk = dir => {
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) walk(full);
+    else if (entry.isFile() && entry.name.endsWith('.html')) htmlFiles.push(full);
+  }
+};
+walk(root);
+
+const broken = [];
+const legacyExploreLinks = [];
+const hrefPattern = /href=["']([^"'#?]+)["']/g;
+for (const file of htmlFiles) {
+  const html = fs.readFileSync(file, 'utf8');
+  let match;
+  while ((match = hrefPattern.exec(html))) {
+    const href = match[1];
+    if (!href.startsWith('/') || href.startsWith('//')) continue;
+    if (href === '/explore/') legacyExploreLinks.push(path.relative(root, file));
+    const target = routeToFile(href);
+    if (!fs.existsSync(target)) broken.push(`${path.relative(root, file)} -> ${href}`);
+  }
+}
+
+if (broken.length) {
+  console.error('Broken internal links detected:');
+  for (const item of [...new Set(broken)]) console.error(`- ${item}`);
+  process.exit(1);
+}
+if (legacyExploreLinks.length) {
+  console.error('Legacy /explore/ navigation links detected. EXPLORE must point to /.');
+  for (const item of [...new Set(legacyExploreLinks)]) console.error(`- ${item}`);
+  process.exit(1);
+}
+
+const registeredCities = cityMap.filter(city => cameras.some(c => city.match.includes(c.city))).length;
+console.log(`Route integrity OK: ${cameras.length} LIVE WINDOW routes, ${registeredCities} registered city routes, static routes, and internal links verified.`);
