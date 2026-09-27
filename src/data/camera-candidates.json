@@ -1,46 +1,94 @@
 [
   {
-    "cameraId": "IM-0013",
-    "name": "JR札幌駅・HTB",
-    "nameEn": "JR Sapporo Station by HTB",
+    "cameraId": "IM-0043",
+    "name": "ニセコ本田珈琲店・羊蹄山",
+    "nameEn": "Niseko Honda Coffee / Mt. Yotei",
     "region": "hokkaido",
     "prefecture": "北海道",
-    "city": "札幌市",
-    "area": "JR札幌駅",
-    "themes": ["station", "city", "weather", "snow"],
-    "channelName": "HTB北海道テレビ",
+    "city": "ニセコ町",
+    "area": "本通・本田珈琲店",
+    "themes": ["mountain", "town", "weather", "snow", "night"],
+    "channelName": "本田珈琲店 | Niseko Ambience & Soundscape",
     "channelId": "pending",
-    "videoId": "gaNLXSEUVRw",
+    "videoId": "lYHd05JHibY",
     "sourceType": "youtube",
     "status": "review",
     "embedEnabled": true,
-    "location": {"lat": 43.0688, "lng": 141.3534},
+    "location": {"lat": 42.804, "lng": 140.687},
     "verification": {
-      "method": "public-youtube-and-current-camera-directory",
+      "method": "web-research-current-youtube-result",
       "channelIdStatus": "pending",
-      "notes": "HTBによるJR札幌駅のYouTubeライブ配信。2026-09-26時点の公開情報で24時間配信として確認。WINDOW HEALTHで現行LIVE・埋め込み・channelIdを正式判定する。"
-    }
+      "notes": "2026-08-16公開の24/7 LIVE。ニセコ町の本田珈琲店から羊蹄山とニセコの街並みを配信。WINDOW HEALTHで現行LIVE・埋め込み・channelIdを正式判定する。"
+    },
+    "healthReason": "pending_health_check"
   },
   {
-    "cameraId": "IM-0014",
-    "name": "釧路・幣舞橋",
-    "nameEn": "Kushiro Nusamai Bridge",
+    "cameraId": "IM-0044",
+    "name": "美瑛・大雪山連峰十勝岳",
+    "nameEn": "Biei / Daisetsuzan Tokachidake",
     "region": "hokkaido",
     "prefecture": "北海道",
-    "city": "釧路市",
-    "area": "幣舞町・幣舞橋",
-    "themes": ["city", "river", "sunset", "weather", "snow"],
-    "channelName": "北海道新聞",
+    "city": "美瑛町",
+    "area": "上川郡美瑛町",
+    "themes": ["mountain", "nature", "weather", "snow"],
+    "channelName": "北海道上川郡美瑛町 大雪山連峰十勝岳ライブカメラ",
     "channelId": "pending",
-    "videoId": "4bus7bosciE",
+    "videoId": "RENrogeu8qA",
     "sourceType": "youtube",
     "status": "review",
     "embedEnabled": true,
-    "location": {"lat": 42.9814, "lng": 144.3855},
+    "location": {"lat": 43.588, "lng": 142.467},
     "verification": {
-      "method": "public-youtube-and-current-camera-directory",
+      "method": "web-research-current-youtube-result",
       "channelIdStatus": "pending",
-      "notes": "北海道新聞による釧路市内YouTubeライブ。幣舞橋・釧路川などを映す24時間配信として2026-09-26時点の公開情報で確認。WINDOW HEALTHで正式判定する。"
-    }
+      "notes": "2026-07-20公開。美瑛町の定点カメラとして大雪山連峰・十勝岳方面、天候や地域の様子を配信。WINDOW HEALTHで現行LIVE・埋め込み・channelIdを正式判定する。"
+    },
+    "healthReason": "pending_health_check"
+  },
+  {
+    "cameraId": "IM-0045",
+    "name": "霧多布湿原・琵琶瀬",
+    "nameEn": "Kiritappu Wetland / Biwase",
+    "region": "hokkaido",
+    "prefecture": "北海道",
+    "city": "浜中町",
+    "area": "琵琶瀬・霧多布湿原",
+    "themes": ["wetland", "nature", "river", "weather", "sunset"],
+    "channelName": "霧多布湿原ナショナルトラスト",
+    "channelId": "pending",
+    "videoId": "LzE0IA_-JXI",
+    "sourceType": "youtube",
+    "status": "review",
+    "embedEnabled": true,
+    "location": {"lat": 43.078, "lng": 145.083},
+    "verification": {
+      "method": "web-research-camera-directory",
+      "channelIdStatus": "pending",
+      "notes": "霧多布湿原ナショナルトラスト設置。霧多布湿原・琵琶瀬木道・琵琶瀬川・泥川を24時間YouTube配信として確認。WINDOW HEALTHで現行状態を正式判定する。"
+    },
+    "healthReason": "pending_health_check"
+  },
+  {
+    "cameraId": "IM-0046",
+    "name": "霧多布湿原センター・MGロード",
+    "nameEn": "Kiritappu Wetland Center / MG Road",
+    "region": "hokkaido",
+    "prefecture": "北海道",
+    "city": "浜中町",
+    "area": "四番沢・霧多布湿原センター",
+    "themes": ["wetland", "road", "river", "nature", "weather"],
+    "channelName": "浜中町役場",
+    "channelId": "pending",
+    "videoId": "aDar5h6ehFQ",
+    "sourceType": "youtube",
+    "status": "review",
+    "embedEnabled": true,
+    "location": {"lat": 43.090, "lng": 145.101},
+    "verification": {
+      "method": "web-research-camera-directory",
+      "channelIdStatus": "pending",
+      "notes": "霧多布湿原センターからMGロード、霧多布湿原、琵琶瀬川などを24時間YouTube配信として確認。WINDOW HEALTHで現行状態を正式判定する。"
+    },
+    "healthReason": "pending_health_check"
   }
 ]
