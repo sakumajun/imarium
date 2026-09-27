@@ -53,5 +53,19 @@
       "旭川"
     ],
     "channelId": "UCJOKZ03IvVCbahaPloXPaww"
+  },
+  {
+    "cameraId": "IM-0046",
+    "changedAt": "2026-09-27T14:30:35.102Z",
+    "fromVideoId": "aDar5h6ehFQ",
+    "toVideoId": "E7wTZ6vmkFI",
+    "reason": "broadcast_none",
+    "confidence": 100,
+    "matchedKeywords": [
+      "浜中町",
+      "霧多布湿原センター",
+      "mgロード"
+    ],
+    "channelId": "UCeb8nozSSdpVcYqm8yruuWA"
   }
 ]
