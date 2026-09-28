@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MainNav from '../components/MainNav.astro';
+---
+<Layout title="プライバシーポリシー | IMARIUM" description="IMARIUMのプライバシーポリシーです。">
+<main class="shell"><header><a class="brand" href="/">IMARIUM // LIVE GRID</a><MainNav /></header><article class="doc"><p class="eyebrow">06 // PRIVACY</p><h1>プライバシーポリシー</h1><p class="lead">IMARIUMにおける情報の取り扱いについてご案内します。</p>
+<section><h2>01 // BROWSER STORAGE</h2><p>MY WINDOWSやMULTI VIEWなどの機能では、選択状態を保持するため、ブラウザのローカルストレージを使用します。これらの情報は利用しているブラウザ内に保存されます。</p></section>
+<section><h2>02 // EXTERNAL CONTENT</h2><p>IMARIUMではYouTube等の外部サービスのコンテンツを埋め込んで表示する場合があります。外部コンテンツの利用時には、当該サービスによるCookieその他の技術が使用される場合があります。詳細は各サービスのプライバシーポリシーをご確認ください。</p></section>
+<section><h2>03 // ACCESS ANALYTICS</h2><p>アクセス解析を導入する場合は、サイト改善を目的として閲覧状況等の情報を取得することがあります。解析サービスを導入した際は、利用するサービスに応じて本ページの内容を更新します。</p></section>
+<section><h2>04 // PERSONAL INFORMATION</h2><p>お問い合わせ等で個人情報を取得する機能を設ける場合は、その利用目的を明示し、目的の範囲内で取り扱います。現在のサイト機能だけで、MY WINDOWSやMULTI VIEWの保存内容をIMARIUMへ送信することはありません。</p></section>
+<section><h2>05 // POLICY UPDATES</h2><p>サービス内容や利用する外部サービスの変更等に応じて、本ポリシーを改定することがあります。</p></section>
+</article><footer><a href="/about/">ABOUT</a><a href="/terms/">USAGE</a><a href="/privacy/">PRIVACY</a></footer></main></Layout>
+<style>.shell{min-height:100vh;padding:0 4vw 3rem}header{height:76px;display:grid;grid-template-columns:1fr 1fr;align-items:center;border-bottom:1px solid var(--line)}.brand{font-weight:700;letter-spacing:.2em;color:var(--cyan);text-decoration:none}.doc{width:min(900px,100%);margin:0 auto;padding:7vh 0}.eyebrow,h2{font-size:.58rem;letter-spacing:.2em;color:var(--cyan)}h1{font-size:clamp(2.4rem,6vw,5rem);font-weight:500;margin:.5rem 0 1.5rem}.lead{font-size:1rem;line-height:2;color:#a9c9d2}.doc section{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--line)}section p{line-height:2;color:var(--sub);font-size:.82rem}footer{border-top:1px solid var(--line);padding:1.5rem 0;display:flex;gap:1.5rem}footer a{color:var(--sub);font-size:.55rem;letter-spacing:.12em;text-decoration:none}@media(max-width:700px){.shell{padding:0 1rem 2rem}header{height:64px}.brand{font-size:.62rem}.doc{padding:3rem 0}footer{flex-wrap:wrap}}</style>
