@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MainNav from '../components/MainNav.astro';
+---
+<Layout title="ABOUT | IMARIUM" description="IMARIUMは、日本各地のライブカメラを場所から探し、その土地の「今」を見るためのライブビューアです。">
+<main class="shell">
+<header><a class="brand" href="/">IMARIUM // LIVE GRID</a><MainNav /></header>
+<article class="doc"><p class="eyebrow">04 // ABOUT</p><h1>日本の「今」を、窓のように。</h1><p class="lead">IMARIUMは、日本各地で公開されているライブカメラを、地域から探して眺めるためのライブビューアです。</p>
+<section><h2>WHAT IS IMARIUM?</h2><p>地図から地域を選び、街・駅・空港・港・観光地・自然など、その場所の現在の様子へアクセスできます。気になる映像はMY WINDOWSに保存し、複数の映像はMULTI VIEWで並べて見ることができます。</p></section>
+<section><h2>LIVE WINDOWS</h2><p>掲載する映像は各配信者がYouTube等で公開しているライブ配信を利用しています。IMARIUM自身が映像を撮影・配信しているものではありません。配信状況や外部サービスの仕様により、予告なく映像が停止・変更される場合があります。</p></section>
+<section><h2>WINDOW HEALTH</h2><p>ライブ配信は常に同じ状態とは限りません。IMARIUMでは登録したWINDOWの状態を確認し、視聴できない映像や更新された配信を継続的に整理していきます。</p></section>
+<section><h2>PROJECT</h2><p>まず北海道からWINDOWを拡充し、順次、日本各地へ対象地域を広げていきます。未実装の地域は地図上で選択できない表示としています。</p></section>
+</article>
+<footer><a href="/about/">ABOUT</a><a href="/terms/">USAGE</a><a href="/privacy/">PRIVACY</a></footer>
+</main>
+</Layout>
+<style>.shell{min-height:100vh;padding:0 4vw 3rem}header{height:76px;display:grid;grid-template-columns:1fr 1fr;align-items:center;border-bottom:1px solid var(--line)}.brand{font-weight:700;letter-spacing:.2em;color:var(--cyan);text-decoration:none;text-shadow:0 0 12px #4ee3ff88}.doc{width:min(900px,100%);margin:0 auto;padding:7vh 0}.eyebrow{font-size:.58rem;letter-spacing:.2em;color:var(--cyan)}h1{font-size:clamp(2.4rem,6vw,5.6rem);font-weight:500;line-height:1.08;margin:.5rem 0 1.5rem;text-shadow:0 0 20px #4ee3ff22}.lead{font-size:1rem;line-height:2;color:#a9c9d2;max-width:700px}.doc section{margin-top:4rem;padding-top:1.3rem;border-top:1px solid var(--line)}h2{font-size:.7rem;letter-spacing:.18em;color:var(--cyan)}section p{line-height:2;color:var(--sub);font-size:.82rem}footer{border-top:1px solid var(--line);padding:1.5rem 0;display:flex;gap:1.5rem}footer a{color:var(--sub);font-size:.55rem;letter-spacing:.12em;text-decoration:none}footer a:hover{color:var(--cyan)}@media(max-width:700px){.shell{padding:0 1rem 2rem}header{height:64px}.brand{font-size:.62rem;letter-spacing:.12em}.doc{padding:3rem 0}.doc section{margin-top:3rem}footer{gap:1rem;flex-wrap:wrap}}</style>
