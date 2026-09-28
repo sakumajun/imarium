@@ -3,14 +3,14 @@ import Layout from '../../../../layouts/Layout.astro';
 import CityHeader from '../../../../components/CityHeader.astro';
 import CityWindowNodes from '../../../../components/CityWindowNodes.astro';
 import cameras from '../../../../data/cameras.json';
-const sapporoCameras = cameras.filter((c) => c.city.startsWith('札幌市'));
-const liveCount=sapporoCameras.filter(c=>c.status==='live'&&c.embedEnabled!==false).length;
+const sapporoCameras = cameras.filter((c) => c.city.startsWith('札幌市') && c.status === 'live' && c.embedEnabled === true);
+const liveCount=sapporoCameras.length;
 ---
 <Layout title="札幌の今 | IMARIUM">
   <main class="shell">
     <CityHeader cityName="札幌" cityEn="SAPPORO" liveCount={liveCount} registeredCount={sapporoCameras.length}/>
     <CityWindowNodes windows={sapporoCameras} cityName="札幌"/>
-    <footer><span>{sapporoCameras.length} REGISTERED WINDOWS</span><span>SELECT WINDOW → OPEN → LIVE</span></footer>
+    <footer><span>{sapporoCameras.length} VERIFIED LIVE WINDOWS</span><span>SELECT WINDOW → OPEN → LIVE</span></footer>
   </main>
 </Layout>
 <style>
