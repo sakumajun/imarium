@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-# Sitemap will be added when the production domain is fixed.
+Sitemap: https://imarium.live/sitemap.xml
