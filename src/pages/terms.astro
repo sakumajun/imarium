@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MainNav from '../components/MainNav.astro';
+---
+<Layout title="利用上の注意 | IMARIUM" description="IMARIUMの利用上の注意、ライブ映像・外部サービス・権利に関する案内です。">
+<main class="shell"><header><a class="brand" href="/">IMARIUM // LIVE GRID</a><MainNav /></header><article class="doc"><p class="eyebrow">05 // USAGE</p><h1>利用上の注意</h1><p class="lead">IMARIUMをご利用いただく際の、ライブ映像と外部サービスに関する基本的なご案内です。</p>
+<section><h2>01 // LIVE CONTENT</h2><p>IMARIUMに表示されるライブ映像は、各配信者が外部サービス上で公開している映像です。IMARIUMが映像そのものを撮影、所有、配信していることを示すものではありません。</p></section>
+<section><h2>02 // RIGHTS</h2><p>映像、名称、ロゴその他のコンテンツに関する権利は、それぞれの権利者に帰属します。各配信元および外部サービスの利用条件が適用される場合があります。</p></section>
+<section><h2>03 // AVAILABILITY</h2><p>ライブ配信の終了、URLの変更、埋め込み制限、通信状況、外部サービスの仕様変更などにより、YouTube等では視聴できてもIMARIUM上では再生できない場合があります。また、表示される映像が必ずしもリアルタイムであることを保証するものではありません。</p></section>
+<section><h2>04 // INFORMATION</h2><p>掲載する地域名や地点情報は、配信元情報等をもとに整理しています。災害、交通、天候その他の安全に関わる判断について、IMARIUMの映像や表示だけに依存しないでください。</p></section>
+<section><h2>05 // CHANGES</h2><p>WINDOWの追加・削除・名称変更、サービス機能および本案内の内容は、運用上必要な場合に変更することがあります。</p></section>
+</article><footer><a href="/about/">ABOUT</a><a href="/terms/">USAGE</a><a href="/privacy/">PRIVACY</a></footer></main></Layout>
+<style>.shell{min-height:100vh;padding:0 4vw 3rem}header{height:76px;display:grid;grid-template-columns:1fr 1fr;align-items:center;border-bottom:1px solid var(--line)}.brand{font-weight:700;letter-spacing:.2em;color:var(--cyan);text-decoration:none}.doc{width:min(900px,100%);margin:0 auto;padding:7vh 0}.eyebrow,h2{font-size:.58rem;letter-spacing:.2em;color:var(--cyan)}h1{font-size:clamp(2.4rem,6vw,5rem);font-weight:500;margin:.5rem 0 1.5rem}.lead{font-size:1rem;line-height:2;color:#a9c9d2}.doc section{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--line)}section p{line-height:2;color:var(--sub);font-size:.82rem}footer{border-top:1px solid var(--line);padding:1.5rem 0;display:flex;gap:1.5rem}footer a{color:var(--sub);font-size:.55rem;letter-spacing:.12em;text-decoration:none}@media(max-width:700px){.shell{padding:0 1rem 2rem}header{height:64px}.brand{font-size:.62rem}.doc{padding:3rem 0}footer{flex-wrap:wrap}}</style>
