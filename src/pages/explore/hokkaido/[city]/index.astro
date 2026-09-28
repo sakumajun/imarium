@@ -3,18 +3,19 @@ import Layout from '../../../../layouts/Layout.astro';
 import CityHeader from '../../../../components/CityHeader.astro';
 import CityWindowNodes from '../../../../components/CityWindowNodes.astro';
 import cameras from '../../../../data/cameras.json';
-export function getStaticPaths(){const cityDefinitions={hakodate:{name:'函館',en:'HAKODATE',match:['函館市']},otaru:{name:'小樽',en:'OTARU',match:['小樽市']},asahikawa:{name:'旭川',en:'ASAHIKAWA',match:['旭川市']},chitose:{name:'新千歳',en:'NEW CHITOSE',match:['千歳市']},wakkanai:{name:'稚内',en:'WAKKANAI',match:['稚内市']},furano:{name:'富良野',en:'FURANO',match:['富良野市']},niseko:{name:'ニセコ',en:'NISEKO',match:['ニセコ町','倶知安町']},obihiro:{name:'帯広',en:'OBIHIRO',match:['帯広市']},kushiro:{name:'釧路',en:'KUSHIRO',match:['釧路市']}};return Object.entries(cityDefinitions).filter(([,city])=>cameras.some(c=>city.match.includes(c.city)&&c.status==='live'&&c.embedEnabled===true)).map(([city,data])=>({params:{city},props:{cityData:data}}));}
+export function getStaticPaths(){const cityDefinitions={hakodate:{name:'函館',en:'HAKODATE',match:['函館市']},otaru:{name:'小樽',en:'OTARU',match:['小樽市']},asahikawa:{name:'旭川',en:'ASAHIKAWA',match:['旭川市']},chitose:{name:'新千歳',en:'NEW CHITOSE',match:['千歳市']},wakkanai:{name:'稚内',en:'WAKKANAI',match:['稚内市']},furano:{name:'富良野',en:'FURANO',match:['富良野市']},niseko:{name:'ニセコ',en:'NISEKO',match:['ニセコ町','倶知安町']},obihiro:{name:'帯広',en:'OBIHIRO',match:['帯広市']},kushiro:{name:'釧路',en:'KUSHIRO',match:['釧路市']}};return Object.entries(cityDefinitions).filter(([,city])=>cameras.some(c=>city.match.includes(c.city))).map(([city,data])=>({params:{city},props:{cityData:data}}));}
 const {cityData}=Astro.props;
-const cityCameras=cameras.filter(c=>cityData.match.includes(c.city)&&c.status==='live'&&c.embedEnabled===true);
+const registeredCameras=cameras.filter(c=>cityData.match.includes(c.city));
+const cityCameras=registeredCameras.filter(c=>c.status==='live'&&c.embedEnabled===true);
 const liveCount=cityCameras.length;
 ---
 <Layout title={`${cityData.name}の今 | IMARIUM`}>
   <main class="shell">
-    <CityHeader cityName={cityData.name} cityEn={cityData.en} liveCount={liveCount} registeredCount={cityCameras.length}/>
-    <CityWindowNodes windows={cityCameras} cityName={cityData.name}/>
-    <footer><span>{cityCameras.length} VERIFIED LIVE WINDOWS</span><span>SELECT WINDOW → OPEN → LIVE</span></footer>
+    <CityHeader cityName={cityData.name} cityEn={cityData.en} liveCount={liveCount} registeredCount={registeredCameras.length}/>
+    {liveCount > 0 ? <CityWindowNodes windows={cityCameras} cityName={cityData.name}/> : <section class="empty"><span>WINDOW HEALTH // CHECK</span><h2>VERIFIED LIVE WINDOW PREPARING</h2><p>現在、このエリアで公開確認済みのLIVE WINDOWはありません。配信・埋め込み状態を確認後に公開します。</p><a href="/explore/hokkaido/">← HOKKAIDO NETWORK</a></section>}
+    <footer><span>{cityCameras.length} VERIFIED LIVE WINDOWS</span><span>{liveCount > 0 ? 'SELECT WINDOW → OPEN → LIVE' : 'UNVERIFIED WINDOWS ARE HIDDEN'}</span></footer>
   </main>
 </Layout>
 <style>
-.shell{min-height:100vh;padding:0 4vw 3rem}footer{display:flex;justify-content:space-between;padding-top:1rem;color:var(--sub);font-size:.55rem;letter-spacing:.14em}@media(max-width:700px){.shell{padding:0 1rem 2rem}footer span:last-child{display:none}}
+.shell{min-height:100vh;padding:0 4vw 3rem}.empty{max-width:900px;margin:7vh auto;padding:clamp(2rem,6vw,5rem);border:1px solid var(--line);text-align:center;background:rgba(5,7,13,.62);box-shadow:inset 0 0 60px rgba(78,227,255,.05)}.empty span{color:var(--sub);font-size:.52rem;letter-spacing:.16em}.empty h2{margin:1rem 0;color:var(--cyan);font-size:clamp(1.2rem,3vw,2rem);font-weight:500;letter-spacing:.08em}.empty p{max-width:620px;margin:0 auto 1.5rem;color:var(--sub);font-size:.72rem;line-height:1.9}.empty a{display:inline-flex;min-height:44px;align-items:center;border:1px solid var(--line);padding:.7rem 1rem;color:var(--cyan);text-decoration:none;font-size:.55rem;letter-spacing:.1em}.empty a:hover{border-color:var(--cyan);background:#4ee3ff12}footer{display:flex;justify-content:space-between;padding-top:1rem;color:var(--sub);font-size:.55rem;letter-spacing:.14em}@media(max-width:700px){.shell{padding:0 1rem 2rem}.empty{margin:4vh 0;padding:2rem 1rem}footer span:last-child{display:none}}
 </style>
