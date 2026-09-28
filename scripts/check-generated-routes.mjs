@@ -3,6 +3,8 @@ import path from 'node:path';
 import cameras from '../src/data/cameras.json' with { type: 'json' };
 
 const root = path.resolve('dist');
+const isPublished = camera => camera.status === 'live' && camera.embedEnabled === true;
+const publishedCameras = cameras.filter(isPublished);
 const cityMap = [
   { slug: 'sapporo', match: ['札幌市', '札幌市ほか'] },
   { slug: 'hakodate', match: ['函館市'] },
@@ -26,18 +28,25 @@ const routeToFile = route => {
 
 const missing = [];
 for (const route of requiredStaticRoutes) if (!fs.existsSync(routeToFile(route))) missing.push(route);
-for (const camera of cameras) {
+for (const camera of publishedCameras) {
   const route = `/live/${camera.cameraId}/`;
   if (!fs.existsSync(routeToFile(route))) missing.push(route);
 }
 for (const city of cityMap) {
-  if (!cameras.some(c => city.match.includes(c.city))) continue;
+  if (!publishedCameras.some(c => city.match.includes(c.city))) continue;
   const route = `/explore/hokkaido/${city.slug}/`;
   if (!fs.existsSync(routeToFile(route))) missing.push(route);
 }
 if (missing.length) {
   console.error('Missing generated routes:');
   for (const route of missing) console.error(`- ${route}`);
+  process.exit(1);
+}
+
+const unexpectedlyPublished = cameras.filter(c => !isPublished(c) && fs.existsSync(routeToFile(`/live/${c.cameraId}/`)));
+if (unexpectedlyPublished.length) {
+  console.error('Non-live WINDOW routes must not be generated:');
+  for (const camera of unexpectedlyPublished) console.error(`- /live/${camera.cameraId}/ (${camera.status})`);
   process.exit(1);
 }
 
@@ -78,5 +87,5 @@ if (legacyExploreLinks.length) {
   process.exit(1);
 }
 
-const registeredCities = cityMap.filter(city => cameras.some(c => city.match.includes(c.city))).length;
-console.log(`Route integrity OK: ${cameras.length} LIVE WINDOW routes, ${registeredCities} registered city routes, static routes, and internal navigation links verified.`);
+const registeredCities = cityMap.filter(city => publishedCameras.some(c => city.match.includes(c.city))).length;
+console.log(`Route integrity OK: ${publishedCameras.length} verified LIVE WINDOW routes, ${registeredCities} published city routes, static routes, and internal navigation links verified.`);
