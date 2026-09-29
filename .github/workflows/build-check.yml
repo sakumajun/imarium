@@ -31,4 +31,6 @@ jobs:
           test -f dist/explore/hokkaido/sapporo/index.html
           test -f dist/favorites/index.html
           test -f dist/multiview/index.html
+          test -f dist/sitemap.xml
+          grep -q "https://imarium.live/" dist/sitemap.xml
           node scripts/check-generated-routes.mjs
