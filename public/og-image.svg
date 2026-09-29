@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">IMARIUM</title><desc id="desc">日本各地のライブカメラから、日本の今を見る。</desc>
+<defs>
+<radialGradient id="g" cx="72%" cy="28%" r="70%"><stop offset="0" stop-color="#123342"/><stop offset=".55" stop-color="#08121d"/><stop offset="1" stop-color="#05070d"/></radialGradient>
+<filter id="glow"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M42 0H0V42" fill="none" stroke="#4ee3ff" stroke-opacity=".09"/></pattern>
+</defs>
+<rect width="1200" height="630" fill="url(#g)"/><rect width="1200" height="630" fill="url(#grid)"/>
+<path d="M80 78H1120M80 552H1120" stroke="#4ee3ff" stroke-opacity=".38"/>
+<text x="600" y="290" text-anchor="middle" fill="#d9f7ff" font-family="Arial, sans-serif" font-size="108" font-weight="700" letter-spacing="24" filter="url(#glow)">IMARIUM</text>
+<text x="600" y="362" text-anchor="middle" fill="#4ee3ff" font-family="Arial, sans-serif" font-size="25" letter-spacing="7">LIVE WINDOWS OF JAPAN</text>
+<text x="600" y="435" text-anchor="middle" fill="#8bb8c5" font-family="sans-serif" font-size="24">日本各地のライブカメラから、日本の「今」を見る。</text>
+<circle cx="104" cy="105" r="5" fill="#ff2fd0"/><text x="123" y="113" fill="#6e9dac" font-family="Arial, sans-serif" font-size="17" letter-spacing="3">LIVE</text>
+</svg>
