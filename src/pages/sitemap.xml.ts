@@ -27,8 +27,8 @@ const staticPaths = [
   '/favorites/',
   '/multiview/',
   '/about/',
-  '/usage/',
   '/privacy/',
+  '/terms/',
 ];
 
 const cityPaths = cityMap
