@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro';
 import cameras from '../data/cameras.json';
+import { information } from '../data/information';
 
 const site = 'https://imarium.live';
 
@@ -29,6 +30,7 @@ const staticPaths = [
   '/about/',
   '/privacy/',
   '/terms/',
+  '/information/',
 ];
 
 const cityPaths = cityMap
@@ -36,12 +38,13 @@ const cityPaths = cityMap
   .map((city) => `/explore/hokkaido/${city.slug}/`);
 
 const livePaths = published.map((camera) => `/live/${camera.cameraId}/`);
+const informationPaths = information.map((item) => `/information/${item.slug}/`);
 
 const escapeXml = (value: string) =>
   value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
 
 export const GET: APIRoute = () => {
-  const paths = [...new Set([...staticPaths, ...cityPaths, ...livePaths])];
+  const paths = [...new Set([...staticPaths, ...cityPaths, ...livePaths, ...informationPaths])];
   const urls = paths
     .map((path) => `  <url><loc>${escapeXml(new URL(path, site).href)}</loc></url>`)
     .join('\n');
