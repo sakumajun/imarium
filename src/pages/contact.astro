@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MainNav from '../components/MainNav.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+---
+<Layout title="お問い合わせ | IMARIUM" description="IMARIUMへのお問い合わせについてご案内します。">
+<main class="shell"><header><a class="brand" href="/">IMARIUM // LIVE GRID</a><MainNav /></header>
+<article class="doc"><p class="eyebrow">06 // CONTACT</p><h1>お問い合わせ</h1><p class="lead">掲載内容、ライブカメラ、権利関係、修正・削除等に関するお問い合わせ窓口です。</p>
+<section><h2>CONTACT CHANNEL</h2><p>現在、お問い合わせ窓口を準備しています。連絡先の公開準備が整い次第、このページに受付方法を掲載します。</p><p class="note">※ お問い合わせ先として使用するメールアドレスまたはフォームを設定後、ここから直接連絡できるようになります。</p></section>
+<section><h2>FOR STREAM OWNERS</h2><p>掲載中のライブ映像について、配信者・権利者から修正または掲載停止のご希望がある場合は、公開予定のお問い合わせ窓口から対象WINDOWが分かる情報を添えてご連絡いただけるようにします。</p></section>
+</article><SiteFooter /></main></Layout>
+<style>.shell{min-height:100vh;padding:0 4vw 3rem}header{height:76px;display:grid;grid-template-columns:1fr 1fr;align-items:center;border-bottom:1px solid var(--line)}.brand{font-weight:700;letter-spacing:.2em;color:var(--cyan);text-decoration:none}.doc{width:min(900px,100%);margin:0 auto;padding:7vh 0}.eyebrow,h2{font-size:.58rem;letter-spacing:.2em;color:var(--cyan)}h1{font-size:clamp(2.4rem,6vw,5rem);font-weight:500;margin:.5rem 0 1.5rem}.lead{font-size:1rem;line-height:2;color:#a9c9d2}.doc section{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--line)}section p{line-height:2;color:var(--sub);font-size:.82rem}.note{font-size:.72rem;color:#557985}@media(max-width:700px){.shell{padding:0 1rem 2rem}header{height:64px}.brand{font-size:.62rem}.doc{padding:3rem 0}}</style>
