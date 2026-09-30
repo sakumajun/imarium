@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MainNav from '../components/MainNav.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+---
+<Layout title="運営情報 | IMARIUM" description="IMARIUMの運営方針と掲載情報についてご案内します。">
+<main class="shell"><header><a class="brand" href="/">IMARIUM // LIVE GRID</a><MainNav /></header>
+<article class="doc"><p class="eyebrow">05 // OPERATOR</p><h1>運営情報</h1><p class="lead">IMARIUMは、日本各地の「今」をライブ映像から探索するためのWebプロジェクトです。</p>
+<section><h2>01 // OPERATION</h2><p>IMARIUM運営が企画・制作・管理する個人運営のWebサービスです。掲載地域や機能を段階的に拡充しながら運営しています。</p></section>
+<section><h2>02 // CONTENT POLICY</h2><p>掲載するライブ映像は、各配信者がYouTube等の外部サービスで公開している配信を利用しています。IMARIUMが撮影・配信元であることを示すものではありません。</p></section>
+<section><h2>03 // AVAILABILITY</h2><p>ライブ配信は配信者の都合、通信状況、外部サービスの仕様変更等により停止・変更される場合があります。IMARIUMでは掲載WINDOWの状態確認と情報更新を継続して行います。</p></section>
+<section><h2>04 // CONTACT</h2><p>掲載内容、権利関係、修正・削除その他のお問い合わせは、お問い合わせページからご確認ください。</p><a class="action" href="/contact/">CONTACT →</a></section>
+</article><SiteFooter /></main></Layout>
+<style>.shell{min-height:100vh;padding:0 4vw 3rem}header{height:76px;display:grid;grid-template-columns:1fr 1fr;align-items:center;border-bottom:1px solid var(--line)}.brand{font-weight:700;letter-spacing:.2em;color:var(--cyan);text-decoration:none}.doc{width:min(900px,100%);margin:0 auto;padding:7vh 0}.eyebrow,h2{font-size:.58rem;letter-spacing:.2em;color:var(--cyan)}h1{font-size:clamp(2.4rem,6vw,5rem);font-weight:500;margin:.5rem 0 1.5rem}.lead{font-size:1rem;line-height:2;color:#a9c9d2}.doc section{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--line)}section p{line-height:2;color:var(--sub);font-size:.82rem}.action{display:inline-block;margin-top:.8rem;color:var(--cyan);font-size:.62rem;letter-spacing:.15em;text-decoration:none}@media(max-width:700px){.shell{padding:0 1rem 2rem}header{height:64px}.brand{font-size:.62rem}.doc{padding:3rem 0}}</style>
