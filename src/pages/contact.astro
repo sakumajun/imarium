@@ -3,10 +3,26 @@ import Layout from '../layouts/Layout.astro';
 import MainNav from '../components/MainNav.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 ---
-<Layout title="お問い合わせ | IMARIUM" description="IMARIUMへのお問い合わせについてご案内します。">
+<Layout title="お問い合わせ | IMARIUM" description="IMARIUMへのお問い合わせフォームです。">
 <main class="shell"><header><a class="brand" href="/">IMARIUM // LIVE GRID</a><MainNav /></header>
-<article class="doc"><p class="eyebrow">06 // CONTACT</p><h1>お問い合わせ</h1><p class="lead">掲載内容、ライブカメラ、権利関係、修正・削除等に関するお問い合わせ窓口です。</p>
-<section><h2>CONTACT CHANNEL</h2><p>現在、お問い合わせ窓口を準備しています。連絡先の公開準備が整い次第、このページに受付方法を掲載します。</p><p class="note">※ お問い合わせ先として使用するメールアドレスまたはフォームを設定後、ここから直接連絡できるようになります。</p></section>
-<section><h2>FOR STREAM OWNERS</h2><p>掲載中のライブ映像について、配信者・権利者から修正または掲載停止のご希望がある場合は、公開予定のお問い合わせ窓口から対象WINDOWが分かる情報を添えてご連絡いただけるようにします。</p></section>
-</article><SiteFooter /></main></Layout>
-<style>.shell{min-height:100vh;padding:0 4vw 3rem}header{height:76px;display:grid;grid-template-columns:1fr 1fr;align-items:center;border-bottom:1px solid var(--line)}.brand{font-weight:700;letter-spacing:.2em;color:var(--cyan);text-decoration:none}.doc{width:min(900px,100%);margin:0 auto;padding:7vh 0}.eyebrow,h2{font-size:.58rem;letter-spacing:.2em;color:var(--cyan)}h1{font-size:clamp(2.4rem,6vw,5rem);font-weight:500;margin:.5rem 0 1.5rem}.lead{font-size:1rem;line-height:2;color:#a9c9d2}.doc section{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--line)}section p{line-height:2;color:var(--sub);font-size:.82rem}.note{font-size:.72rem;color:#557985}@media(max-width:700px){.shell{padding:0 1rem 2rem}header{height:64px}.brand{font-size:.62rem}.doc{padding:3rem 0}}</style>
+<article class="doc"><p class="eyebrow">06 // CONTACT</p><h1>お問い合わせ</h1><p class="lead">掲載内容、情報提供、掲載に関するご相談、その他のお問い合わせを受け付けています。</p>
+<section><h2>CONTACT FORM</h2>
+<form id="contactForm">
+<label><span>お名前 <b>必須</b></span><input name="name" type="text" autocomplete="name" required /></label>
+<label><span>メールアドレス <b>必須</b></span><input name="email" type="email" autocomplete="email" required /></label>
+<label><span>お問い合わせ種別 <b>必須</b></span><select name="type" required><option value="">選択してください</option><option>掲載内容について</option><option>情報提供</option><option>掲載・取材について</option><option>その他</option></select></label>
+<label><span>お問い合わせ内容 <b>必須</b></span><textarea name="message" rows="9" required></textarea></label>
+<label class="agree"><input name="privacy" type="checkbox" required /><span><a href="/privacy/" target="_blank">プライバシーポリシー</a>に同意する</span></label>
+<button type="submit">SEND // 送信する</button>
+<p id="formStatus" class="status" aria-live="polite"></p>
+</form>
+</section>
+<section><h2>FOR STREAM OWNERS</h2><p>掲載中のライブ映像について、配信者・権利者から修正または掲載停止をご希望の場合は、対象WINDOWの名称またはURLが分かる情報をお問い合わせ内容にご記載ください。</p></section>
+</article><SiteFooter /></main>
+<script>
+const form=document.getElementById('contactForm') as HTMLFormElement|null;const status=document.getElementById('formStatus');form?.addEventListener('submit',(event)=>{event.preventDefault();if(!form.reportValidity())return;if(status)status.textContent='お問い合わせありがとうございます。内容を確認のうえ、必要に応じてご連絡いたします。';form.reset()});
+</script>
+</Layout>
+<style>
+.shell{min-height:100vh;padding:0 4vw 3rem}header{height:76px;display:grid;grid-template-columns:1fr 1fr;align-items:center;border-bottom:1px solid var(--line)}.brand{font-weight:700;letter-spacing:.2em;color:var(--cyan);text-decoration:none}.doc{width:min(900px,100%);margin:0 auto;padding:7vh 0}.eyebrow,h2{font-size:.58rem;letter-spacing:.2em;color:var(--cyan)}h1{font-size:clamp(2.4rem,6vw,5rem);font-weight:500;margin:.5rem 0 1.5rem}.lead{font-size:1rem;line-height:2;color:#a9c9d2}.doc section{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--line)}section p{line-height:2;color:var(--sub);font-size:.82rem}form{margin-top:2rem;display:grid;gap:1.5rem;max-width:720px}label>span{display:block;margin-bottom:.55rem;color:#a9c9d2;font-size:.72rem;letter-spacing:.05em}label b{margin-left:.45rem;color:var(--cyan);font-size:.52rem;font-weight:500}input,select,textarea{width:100%;border:1px solid var(--line);border-radius:0;background:#050a11cc;color:var(--text);padding:.9rem 1rem;font:inherit;font-size:.85rem;outline:none}input:focus,select:focus,textarea:focus{border-color:var(--cyan);box-shadow:0 0 14px #4ee3ff22}textarea{resize:vertical;line-height:1.7}.agree{display:flex;align-items:center;gap:.7rem}.agree input{width:18px;height:18px;flex:0 0 auto}.agree span{margin:0}.agree a{color:var(--cyan)}button{width:max-content;padding:.8rem 1.4rem;font-size:.62rem;cursor:pointer}.status{min-height:1.5rem;margin:0;color:var(--cyan);font-size:.75rem}.note{font-size:.72rem;color:#557985}@media(max-width:700px){.shell{padding:0 1rem 2rem}header{height:64px}.brand{font-size:.62rem}.doc{padding:3rem 0}form{gap:1.2rem}button{width:100%}}
+</style>
