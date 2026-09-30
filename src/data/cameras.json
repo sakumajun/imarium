@@ -22,7 +22,7 @@
       "lat": 43.061,
       "lng": 141.356
     },
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z",
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z",
     "verification": {
       "method": "youtube-data-api",
       "channelIdStatus": "verified",
@@ -60,7 +60,7 @@
       "channelIdStatus": "pending",
       "notes": "Previous public stream candidate is no longer returned by the YouTube Data API; retained for recovery research."
     },
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z",
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z",
     "healthReason": "video_not_found;channel_unverified"
   },
   {
@@ -92,7 +92,7 @@
       "channelIdStatus": "verified",
       "notes": "Current public STV listing found on 2026-09-26; WINDOW HEALTH must confirm live/embed state."
     },
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z",
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z",
     "healthReason": "broadcast_upcoming;no_matching_live_on_channel"
   },
   {
@@ -127,7 +127,7 @@
       "notes": "Public YouTube listing describes a 24-hour live rotation including New Chitose Airport, UHB headquarters, Odori Park, Otaru Canal and Mt. Hakodate. WINDOW HEALTH must confirm current live/embed state."
     },
     "healthReason": "broadcast_none;no_matching_live_on_channel",
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z"
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z"
   },
   {
     "cameraId": "IM-0005",
@@ -161,7 +161,7 @@
       "notes": "Public YouTube listing identifies this as a 24-hour Hakodate Station-front live camera. WINDOW HEALTH must confirm current live/embed state and channelId."
     },
     "healthReason": null,
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z",
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z",
     "lastReplacedAt": "2026-09-26T09:40:55.157Z"
   },
   {
@@ -195,7 +195,7 @@
       "notes": "函館山ロープウェイ公式サイトが24時間YouTube配信として掲載。公式ページは配信再開時にリンクが変わる場合があると明記。WINDOW HEALTHで現行状態を確認する。"
     },
     "healthReason": null,
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z"
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z"
   },
   {
     "cameraId": "IM-0007",
@@ -228,7 +228,7 @@
       "notes": "ANAクラウンプラザホテル釧路公式サイトが24時間ライブ放送として掲載。WINDOW HEALTHで現行LIVE・埋め込み・channelIdを確認する。"
     },
     "healthReason": null,
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z"
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z"
   },
   {
     "cameraId": "IM-0008",
@@ -258,7 +258,7 @@
       "channelIdStatus": "verified",
       "notes": "Current YouTube result published 2026-01-21 describes a 24-hour live information camera from the broadcaster's studio rooftop. WINDOW HEALTH must verify current live/embed state and channelId."
     },
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z",
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z",
     "healthReason": null,
     "lastReplacedAt": "2026-09-26T10:02:48.456Z"
   },
@@ -286,11 +286,11 @@
       "lng": 142.375
     },
     "verification": {
-      "method": "youtube-data-api-channel-live-discovery",
+      "method": "youtube-data-api",
       "channelIdStatus": "verified",
       "notes": "Current YouTube result published 2026-03-25. Description explicitly says the URL changes after stream restarts, making it suitable for WINDOW HEALTH recovery. WINDOW HEALTH must verify current live/embed state and channelId."
     },
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z",
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z",
     "healthReason": null,
     "lastReplacedAt": "2026-09-29T15:17:27.689Z"
   },
@@ -323,7 +323,7 @@
       "channelIdStatus": "pending",
       "notes": "ニセコ町公式サイトとニセコリゾート観光協会公式サイトが道の駅ニセコビュープラザからのリアルタイム映像を案内。YouTube現行候補を2026-09-26に確認。WINDOW HEALTHでLIVE・埋め込み・channelIdを正式判定する。"
     },
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z",
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z",
     "healthReason": "video_not_found;channel_unverified"
   },
   {
@@ -355,7 +355,7 @@
       "channelIdStatus": "verified",
       "notes": "十勝毎日新聞の現行候補を2026-09-26に確認。説明欄はホテル日航ノースランド帯広屋上のカメラからJR帯広駅周辺をライブ配信すると明記。旧候補 iyn1BT5fKyw より新しい2026-04-26公開候補を登録し、WINDOW HEALTHで現行LIVE・埋め込み・channelIdを正式判定する。"
     },
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z",
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z",
     "healthReason": null
   },
   {
@@ -389,7 +389,7 @@
       "channelIdStatus": "verified",
       "notes": "ノシャップのキックスタート設置カメラ。YouTube検索とライブカメラDBで24時間YouTube配信を確認。配信URLが頻繁に変わるため、2025-02-04公開候補を初期値として登録しWINDOW HEALTHで後継LIVEを探索・正式判定する。"
     },
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z",
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z",
     "healthReason": "broadcast_none;no_matching_live_on_channel"
   },
   {
@@ -421,7 +421,7 @@
       "channelIdStatus": "verified",
       "notes": "HTBによるJR札幌駅のYouTubeライブ配信。2026-09-26時点の公開情報で24時間配信として確認。WINDOW HEALTHで現行LIVE・埋め込み・channelIdを正式判定する。"
     },
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z",
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z",
     "healthReason": null
   },
   {
@@ -454,7 +454,7 @@
       "channelIdStatus": "verified",
       "notes": "北海道新聞による釧路市内YouTubeライブ。幣舞橋・釧路川などを映す24時間配信として2026-09-26時点の公開情報で確認。WINDOW HEALTHで正式判定する。"
     },
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z",
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z",
     "healthReason": null
   },
   {
@@ -488,7 +488,7 @@
       "channelIdStatus": "pending",
       "notes": "小樽天狗山ロープウエイ公式サイトの2026年夏期営業案内と小樽観光協会公式情報が同じYouTubeライブURLを掲載。WINDOW HEALTHで現行LIVE・埋め込み・channelIdを正式判定する。"
     },
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z",
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z",
     "healthReason": "video_not_found;channel_unverified"
   },
   {
@@ -521,7 +521,7 @@
       "channelIdStatus": "verified",
       "notes": "2026-09-25更新の公開ライブカメラ情報で、サフィールホテル稚内から宗谷湾・稚内港・北防波堤ドーム・フェリーを映すYouTube生配信として確認。WINDOW HEALTHで現行LIVE・埋め込み・channelIdを正式判定する。"
     },
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z",
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z",
     "healthReason": "broadcast_none;no_matching_live_on_channel"
   },
   {
@@ -547,7 +547,7 @@
       "notes": "ユーザー指定URL。WINDOW HEALTHと追加調査で地点・配信元・LIVE状態を確定する。"
     },
     "healthReason": null,
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z"
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z"
   },
   {
     "cameraId": "IM-0018",
@@ -572,7 +572,7 @@
       "notes": "ユーザー指定URL。地点・配信元を追加確認する。"
     },
     "healthReason": null,
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z"
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z"
   },
   {
     "cameraId": "IM-0019",
@@ -600,7 +600,7 @@
       "notes": "24時間YouTube生配信として公開情報を確認。WINDOW HEALTHで正式判定する。"
     },
     "healthReason": null,
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z"
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z"
   },
   {
     "cameraId": "IM-0020",
@@ -628,7 +628,7 @@
       "notes": "STVによるJR札幌駅24時間ライブ。既存HTB札幌駅とは別配信のため保持。"
     },
     "healthReason": null,
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z"
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z"
   },
   {
     "cameraId": "IM-0021",
@@ -656,7 +656,7 @@
       "notes": "北広島市内、エスコンフィールド、JR千歳線などを映す配信として確認。"
     },
     "healthReason": null,
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z"
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z"
   },
   {
     "cameraId": "IM-0022",
@@ -684,7 +684,7 @@
       "notes": "南一条通と札幌市電を映すリアルタイム配信として確認。"
     },
     "healthReason": null,
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z"
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z"
   },
   {
     "cameraId": "IM-0023",
@@ -712,7 +712,7 @@
       "notes": "エスコンフィールドHOKKAIDOと周辺を映すライブとして確認。STV北広島とは別アングルのため保持。"
     },
     "healthReason": null,
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z"
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z"
   },
   {
     "cameraId": "IM-0024",
@@ -740,7 +740,7 @@
       "notes": "創世スクエアから大通公園、テレビ塔、札幌中心部を映す配信として確認。"
     },
     "healthReason": null,
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z"
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z"
   },
   {
     "cameraId": "IM-0025",
@@ -765,7 +765,7 @@
       "notes": "ユーザー指定URL。地点・配信元を追加確認する。"
     },
     "healthReason": null,
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z"
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z"
   },
   {
     "cameraId": "IM-0026",
@@ -793,7 +793,7 @@
       "notes": "北海道神宮頓宮と周辺道路を映すライブとして確認。重複URL2件は1件に統合。"
     },
     "healthReason": null,
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z"
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z"
   },
   {
     "cameraId": "IM-0027",
@@ -821,7 +821,7 @@
       "notes": "新千歳空港滑走路・駐機場のライブ。指定された3SKn4LgGJk8も同一カメラ系統のため1件に統合。"
     },
     "healthReason": null,
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z"
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z"
   },
   {
     "cameraId": "IM-0028",
@@ -849,7 +849,7 @@
       "notes": "ニセコHANAZONOのスキー場ライブ候補として確認。"
     },
     "healthReason": null,
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z"
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z"
   },
   {
     "cameraId": "IM-0029",
@@ -874,7 +874,7 @@
       "notes": "ユーザー指定URL。地点・配信元を追加確認する。"
     },
     "healthReason": "video_not_found;no_matching_live_on_channel",
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z"
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z"
   },
   {
     "cameraId": "IM-0030",
@@ -899,7 +899,7 @@
       "notes": "ユーザー指定URL。重複していた同一URL2件は1件に統合。"
     },
     "healthReason": "broadcast_none;no_matching_live_on_channel",
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z"
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z"
   },
   {
     "cameraId": "IM-0031",
@@ -927,7 +927,7 @@
       "notes": "奥尻島、鍋釣岩、奥尻港を映す24時間ライブとして確認。"
     },
     "healthReason": null,
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z"
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z"
   },
   {
     "cameraId": "IM-0032",
@@ -952,7 +952,7 @@
       "notes": "ユーザー指定URL。地点・配信元を追加確認する。"
     },
     "healthReason": "broadcast_none;no_matching_live_on_channel",
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z"
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z"
   },
   {
     "cameraId": "IM-0033",
@@ -977,7 +977,7 @@
       "notes": "ユーザー指定URL。地点・配信元を追加確認する。"
     },
     "healthReason": "broadcast_none;no_matching_live_on_channel",
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z"
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z"
   },
   {
     "cameraId": "IM-0034",
@@ -1004,7 +1004,7 @@
       "notes": "マーレ旭丸から夕日と日本海を映す24時間ライブとして確認。"
     },
     "healthReason": null,
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z"
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z"
   },
   {
     "cameraId": "IM-0035",
@@ -1032,7 +1032,7 @@
       "notes": "中島公園・中島公園駅・周辺道路を映す24時間ライブとして確認。"
     },
     "healthReason": null,
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z"
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z"
   },
   {
     "cameraId": "IM-0036",
@@ -1059,7 +1059,7 @@
       "notes": "南1条通・東4丁目通交差点周辺の24時間ライブとして確認。"
     },
     "healthReason": null,
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z"
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z"
   },
   {
     "cameraId": "IM-0037",
@@ -1087,7 +1087,7 @@
       "notes": "国道36号、創成川通、すすきの周辺を映す24時間ライブとして確認。"
     },
     "healthReason": null,
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z"
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z"
   },
   {
     "cameraId": "IM-0038",
@@ -1112,7 +1112,7 @@
       "notes": "ユーザー指定URL。地点・配信元を追加確認する。"
     },
     "healthReason": null,
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z"
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z"
   },
   {
     "cameraId": "IM-0039",
@@ -1140,7 +1140,7 @@
       "notes": "士幌の市街地・空・道路を24時間配信するライブとして公開情報を確認。"
     },
     "healthReason": null,
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z"
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z"
   },
   {
     "cameraId": "IM-0040",
@@ -1168,7 +1168,7 @@
       "notes": "新冠町の競走馬生産牧場を映すライブとして確認。"
     },
     "healthReason": null,
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z"
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z"
   },
   {
     "cameraId": "IM-0041",
@@ -1193,7 +1193,7 @@
       "notes": "ユーザー指定URL。地点・配信元を追加確認する。"
     },
     "healthReason": null,
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z"
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z"
   },
   {
     "cameraId": "IM-0042",
@@ -1221,7 +1221,7 @@
       "notes": "とかち帯広空港の滑走路・駐機場を映す24時間ライブとして確認。"
     },
     "healthReason": null,
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z"
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z"
   },
   {
     "cameraId": "IM-0043",
@@ -1254,7 +1254,7 @@
       "notes": "2026-08-16公開の24/7 LIVE。ニセコ町の本田珈琲店から羊蹄山とニセコの街並みを配信。WINDOW HEALTHで現行LIVE・埋め込み・channelIdを正式判定する。"
     },
     "healthReason": "video_not_found;channel_unverified",
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z"
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z"
   },
   {
     "cameraId": "IM-0044",
@@ -1286,7 +1286,7 @@
       "notes": "2026-07-20公開。美瑛町の定点カメラとして大雪山連峰・十勝岳方面、天候や地域の様子を配信。WINDOW HEALTHで現行LIVE・埋め込み・channelIdを正式判定する。"
     },
     "healthReason": "embedding_disabled;no_matching_live_on_channel",
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z"
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z"
   },
   {
     "cameraId": "IM-0045",
@@ -1319,7 +1319,7 @@
       "notes": "霧多布湿原ナショナルトラスト設置。霧多布湿原・琵琶瀬木道・琵琶瀬川・泥川を24時間YouTube配信として確認。WINDOW HEALTHで現行状態を正式判定する。"
     },
     "healthReason": null,
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z"
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z"
   },
   {
     "cameraId": "IM-0046",
@@ -1352,7 +1352,7 @@
       "notes": "霧多布湿原センターからMGロード、霧多布湿原、琵琶瀬川などを24時間YouTube配信として確認。WINDOW HEALTHで現行状態を正式判定する。"
     },
     "healthReason": null,
-    "lastCheckedAt": "2026-09-29T15:17:27.689Z",
+    "lastCheckedAt": "2026-09-30T00:14:20.436Z",
     "lastReplacedAt": "2026-09-27T14:30:35.102Z"
   }
 ]
