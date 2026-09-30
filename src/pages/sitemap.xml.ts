@@ -28,6 +28,8 @@ const staticPaths = [
   '/favorites/',
   '/multiview/',
   '/about/',
+  '/operator/',
+  '/contact/',
   '/privacy/',
   '/terms/',
   '/information/',
