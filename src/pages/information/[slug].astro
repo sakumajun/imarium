@@ -1,0 +1,14 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { information } from '../../data/information';
+export function getStaticPaths(){return information.map(item=>({params:{slug:item.slug},props:{item}}))}
+const {item}=Astro.props;
+---
+<Layout title={`${item.title} | IMARIUM`} description={item.summary}>
+<main class="shell"><header><a href="/" class="brand">IMARIUM // LIVE GRID</a><a href="/information/" class="back">← INFORMATION</a></header>
+<article><div class="meta"><time datetime={item.date}>{item.date.replaceAll('-','.')} </time><b>{item.category}</b></div><h1>{item.title}</h1><p class="lead">{item.summary}</p><div class="body">{item.body.map((paragraph:string)=><p>{paragraph}</p>)}</div><a class="return" href="/information/">← INFORMATION INDEX</a></article>
+</main>
+</Layout>
+<style>
+.shell{min-height:100vh;padding:0 5vw 5rem;max-width:900px;margin:auto}header{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{color:var(--cyan);font-weight:700;letter-spacing:.2em;text-decoration:none}.back{color:var(--sub);font-size:.6rem;text-decoration:none}article{padding:10vh 0}.meta{display:flex;gap:1.5rem;color:var(--sub);font-size:.58rem;letter-spacing:.14em}.meta b{color:var(--cyan)}h1{margin:1.2rem 0;font-size:clamp(1.6rem,4vw,2.7rem);line-height:1.45;letter-spacing:.06em}.lead{padding:1.2rem 0 2rem;border-bottom:1px solid var(--line);color:var(--sub);line-height:1.9}.body{padding:2rem 0}.body p{margin:0 0 1.5rem;line-height:2;color:#c8e3e9;font-size:.9rem}.return{display:inline-block;margin-top:2rem;color:var(--cyan);font-size:.58rem;letter-spacing:.13em;text-decoration:none}@media(max-width:650px){.shell{padding:0 1rem 3rem}.brand{font-size:.62rem}article{padding:4rem 0}}
+</style>
