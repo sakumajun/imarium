@@ -29,6 +29,14 @@ const socialImageURL = Astro.site ? new URL('/og-image.svg', Astro.site) : new U
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
   <title>{title}</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1FCP4PF47E"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1FCP4PF47E');
+  </script>
 </head>
 <body id="main-content" tabindex="-1"><a class="skip-link" href="#main-content">本文へスキップ</a><slot /></body>
 </html>
