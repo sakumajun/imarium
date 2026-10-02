@@ -18,7 +18,7 @@ const cityMap = [
   { slug: 'kushiro', match: ['釧路市'] }
 ];
 
-const requiredStaticRoutes = ['/', '/explore/', '/explore/hokkaido/', '/favorites/', '/multiview/', '/404.html'];
+const requiredStaticRoutes = ['/', '/explore/', '/explore/hokkaido/', '/explore/aomori/', '/favorites/', '/multiview/', '/404.html'];
 
 const routeToFile = route => {
   if (route === '/') return path.join(root, 'index.html');
