@@ -25,6 +25,7 @@ const staticPaths = [
   '/',
   '/explore/',
   '/explore/hokkaido/',
+  '/explore/aomori/',
   '/favorites/',
   '/multiview/',
   '/about/',
