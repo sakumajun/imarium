@@ -93,5 +93,18 @@
       "旭川"
     ],
     "channelId": "UCJOKZ03IvVCbahaPloXPaww"
+  },
+  {
+    "cameraId": "IM-0047",
+    "changedAt": "2026-10-05T17:42:49.890Z",
+    "fromVideoId": "4nHIoLNbBcM",
+    "toVideoId": "2EfwG0g0rW4",
+    "reason": "broadcast_upcoming",
+    "confidence": 80,
+    "matchedKeywords": [
+      "秋田空港",
+      "秋田駅前"
+    ],
+    "channelId": "UC7UzAjbjzvekhio8uEJXCpw"
   }
 ]
