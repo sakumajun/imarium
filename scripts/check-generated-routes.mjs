@@ -7,6 +7,14 @@ const isPublished = camera => camera.status === 'live' && camera.embedEnabled ==
 const publishedCameras = cameras.filter(isPublished);
 const cityMap = [
   { slug: 'sapporo', match: ['札幌市', '札幌市ほか'] },
+  { slug: 'kitahiroshima', match: ['北広島市'] },
+  { slug: 'iwamizawa', match: ['岩見沢市'] },
+  { slug: 'okushiri', match: ['奥尻町'] },
+  { slug: 'setana', match: ['せたな町'] },
+  { slug: 'shihoro', match: ['士幌町'] },
+  { slug: 'niikappu', match: ['新冠町'] },
+  { slug: 'hamanaka', match: ['浜中町'] },
+  { slug: 'hokuto', match: ['北斗市'] },
   { slug: 'hakodate', match: ['函館市'] },
   { slug: 'otaru', match: ['小樽市'] },
   { slug: 'asahikawa', match: ['旭川市'] },
