@@ -1,0 +1,21 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import CityHeader from '../../../../components/CityHeader.astro';
+import CityWindowNodes from '../../../../components/CityWindowNodes.astro';
+import cameras from '../../../../data/cameras.json';
+export function getStaticPaths(){const cityDefinitions={akita:{name:'秋田',en:'AKITA',match:['秋田市']},noshiro:{name:'能代',en:'NOSHIRO',match:['能代市']},odate:{name:'大館',en:'ODATE',match:['大館市']},oga:{name:'男鹿',en:'OGA',match:['男鹿市']},yokote:{name:'横手',en:'YOKOTE',match:['横手市']},yuzawa:{name:'湯沢',en:'YUZAWA',match:['湯沢市']},daisen:{name:'大仙',en:'DAISEN',match:['大仙市']},semboku:{name:'仙北',en:'SEMBOKU',match:['仙北市']},yurihonjo:{name:'由利本荘',en:'YURIHONJO',match:['由利本荘市']}}return Object.entries(cityDefinitions).filter(([,city])=>cameras.some(c=>city.match.includes(c.city))).map(([city,data])=>({params:{city},props:{cityData:data}}));}
+const {cityData}=Astro.props;
+const registeredCameras=cameras.filter(c=>cityData.match.includes(c.city));
+const cityCameras=registeredCameras.filter(c=>c.status==='live'&&c.embedEnabled===true);
+const liveCount=cityCameras.length;
+---
+<Layout title={`${cityData.name}の今 | IMARIUM`}>
+  <main class="shell">
+    <CityHeader cityName={cityData.name} cityEn={cityData.en} liveCount={liveCount} registeredCount={registeredCameras.length}/>
+    {liveCount > 0 ? <CityWindowNodes windows={cityCameras} cityName={cityData.name}/> : <section class="empty"><span>WINDOW HEALTH // CHECK</span><h2>VERIFIED LIVE WINDOW PREPARING</h2><p>現在、このエリアで公開確認済みのLIVE WINDOWはありません。配信・埋め込み状態を確認後に公開します。</p><a href="/explore/akita/">← AKITA NETWORK</a></section>}
+    <footer><span>{cityCameras.length} VERIFIED LIVE WINDOWS</span><span>{liveCount > 0 ? 'SELECT WINDOW → OPEN → LIVE' : 'UNVERIFIED WINDOWS ARE HIDDEN'}</span></footer>
+  </main>
+</Layout>
+<style>
+.shell{min-height:100vh;padding:0 4vw 3rem}.empty{max-width:900px;margin:7vh auto;padding:clamp(2rem,6vw,5rem);border:1px solid var(--line);text-align:center;background:rgba(5,7,13,.62);box-shadow:inset 0 0 60px rgba(78,227,255,.05)}.empty span{color:var(--sub);font-size:.52rem;letter-spacing:.16em}.empty h2{margin:1rem 0;color:var(--cyan);font-size:clamp(1.2rem,3vw,2rem);font-weight:500;letter-spacing:.08em}.empty p{max-width:620px;margin:0 auto 1.5rem;color:var(--sub);font-size:.72rem;line-height:1.9}.empty a{display:inline-flex;min-height:44px;align-items:center;border:1px solid var(--line);padding:.7rem 1rem;color:var(--cyan);text-decoration:none;font-size:.55rem;letter-spacing:.1em}.empty a:hover{border-color:var(--cyan);background:#4ee3ff12}footer{display:flex;justify-content:space-between;padding-top:1rem;color:var(--sub);font-size:.55rem;letter-spacing:.14em}@media(max-width:700px){.shell{padding:0 1rem 2rem}.empty{margin:4vh 0;padding:2rem 1rem}footer span:last-child{display:none}}
+</style>
