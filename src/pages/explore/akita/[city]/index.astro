@@ -3,7 +3,7 @@ import Layout from '../../../../layouts/Layout.astro';
 import CityHeader from '../../../../components/CityHeader.astro';
 import CityWindowNodes from '../../../../components/CityWindowNodes.astro';
 import cameras from '../../../../data/cameras.json';
-export function getStaticPaths(){const cityDefinitions={akita:{name:'秋田',en:'AKITA',match:['秋田市']},noshiro:{name:'能代',en:'NOSHIRO',match:['能代市']},odate:{name:'大館',en:'ODATE',match:['大館市']},oga:{name:'男鹿',en:'OGA',match:['男鹿市']},yokote:{name:'横手',en:'YOKOTE',match:['横手市']},yuzawa:{name:'湯沢',en:'YUZAWA',match:['湯沢市']},daisen:{name:'大仙',en:'DAISEN',match:['大仙市']},semboku:{name:'仙北',en:'SEMBOKU',match:['仙北市']},yurihonjo:{name:'由利本荘',en:'YURIHONJO',match:['由利本荘市']}}return Object.entries(cityDefinitions).filter(([,city])=>cameras.some(c=>city.match.includes(c.city))).map(([city,data])=>({params:{city},props:{cityData:data}}));}
+export function getStaticPaths(){const cityDefinitions={akita:{name:'秋田',en:'AKITA',match:['秋田市']},noshiro:{name:'能代',en:'NOSHIRO',match:['能代市']},odate:{name:'大館',en:'ODATE',match:['大館市']},oga:{name:'男鹿',en:'OGA',match:['男鹿市']},yokote:{name:'横手',en:'YOKOTE',match:['横手市']},yuzawa:{name:'湯沢',en:'YUZAWA',match:['湯沢市']},daisen:{name:'大仙',en:'DAISEN',match:['大仙市']},semboku:{name:'仙北',en:'SEMBOKU',match:['仙北市']},yurihonjo:{name:'由利本荘',en:'YURIHONJO',match:['由利本荘市']}};return Object.entries(cityDefinitions).filter(([,city])=>cameras.some(c=>city.match.includes(c.city))).map(([city,data])=>({params:{city},props:{cityData:data}}));}
 const {cityData}=Astro.props;
 const registeredCameras=cameras.filter(c=>cityData.match.includes(c.city));
 const cityCameras=registeredCameras.filter(c=>c.status==='live'&&c.embedEnabled===true);
