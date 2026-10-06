@@ -1,14 +1,12 @@
 ---
-import MainNav from './MainNav.astro';
 interface Props { cityName: string; cityEn: string; liveCount: number; registeredCount: number; }
 const { cityName, cityEn, liveCount, registeredCount } = Astro.props as Props;
 ---
 <header class="city-header">
   <a class="back" href="/explore/hokkaido/">← HOKKAIDO</a>
   <a class="brand" href="/">IMARIUM // LIVE GRID</a>
-  <MainNav />
 </header>
-<section class="heading"><div><p>01.02 // HOKKAIDO / {cityEn}</p><h1>{cityName}の「今」</h1><span>WINDOW HEALTHで確認しているライブカメラから選べます。</span></div><div class="count"><b>{liveCount}</b> LIVE <i></i><b>{registeredCount}</b> REGISTERED</div></section>
+<section class="heading"><div><p>01.02 // HOKKAIDO / {cityEn}</p><h1>{cityName}の「今」</h1></div><div class="count"><b>{liveCount}</b> LIVE <i></i><b>{registeredCount}</b> REGISTERED</div></section>
 <style>
 .city-header{height:76px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;border-bottom:1px solid var(--line);position:relative}.back{color:var(--sub);text-decoration:none;font-size:.6rem;letter-spacing:.12em;width:max-content}.back:hover,.back:focus-visible{color:var(--cyan)}.brand{color:var(--cyan)!important;font-size:.78rem;font-weight:700;letter-spacing:.2em;text-decoration:none;text-shadow:0 0 12px #4ee3ff88}.heading{padding:5vh 0 1.6rem;display:flex;justify-content:space-between;align-items:end;gap:2rem}.heading p{font-size:.58rem;letter-spacing:.2em;color:var(--sub)}.heading h1{font-size:clamp(2.1rem,5vw,4.5rem);font-weight:500;letter-spacing:.02em;margin:.35rem 0;text-shadow:0 0 20px #4ee3ff22}.heading span{color:var(--sub);font-size:.7rem}.count{font-size:.55rem;letter-spacing:.12em;color:var(--sub);white-space:nowrap}.count b{font-size:1.05rem;color:var(--cyan)}.count i{display:inline-block;width:1px;height:13px;background:var(--line);margin:0 .7rem}@media(max-width:700px){.city-header{height:64px;grid-template-columns:1fr auto 1fr}.back{font-size:.48rem}.brand{font-size:.58rem;letter-spacing:.12em;white-space:nowrap}.heading{padding-top:2.5rem;display:block}.heading p{font-size:.5rem}.heading span{font-size:.64rem}.count{margin-top:1rem}}
 </style>
