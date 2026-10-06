@@ -8,7 +8,7 @@ const {cityData}=Astro.props;
 const registeredCameras=cameras.filter(c=>cityData.match.includes(c.city));
 const cityCameras=registeredCameras.filter(c=>c.status==='live'&&c.embedEnabled===true);
 const liveCount=cityCameras.length;
-const coordinates={"sapporo":[43.0618,141.3545],"asahikawa":[43.7706,142.365],"hakodate":[41.7687,140.7288],"otaru":[43.1907,140.9947],"wakkanai":[45.4157,141.6731],"kushiro":[42.9849,144.3818],"obihiro":[42.9236,143.196],"chitose":[42.7752,141.6923],"kitahiroshima":[42.9854,141.5632]};const [latitude,longitude]=coordinates[Astro.params.city]||[43.1,142.0];
+const coordinates: Record<string,[number,number]>={"sapporo":[43.0618,141.3545],"asahikawa":[43.7706,142.365],"hakodate":[41.7687,140.7288],"otaru":[43.1907,140.9947],"wakkanai":[45.4157,141.6731],"kushiro":[42.9849,144.3818],"obihiro":[42.9236,143.196],"chitose":[42.7752,141.6923],"kitahiroshima":[42.9854,141.5632]};const [latitude,longitude]=coordinates[String(Astro.params.city||"")]||[43.1,142.0];
 
 ---
 <Layout title={`${cityData.name}の今 | IMARIUM`}>
