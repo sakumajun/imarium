@@ -106,5 +106,18 @@
       "秋田駅前"
     ],
     "channelId": "UC7UzAjbjzvekhio8uEJXCpw"
+  },
+  {
+    "cameraId": "IM-0005",
+    "changedAt": "2026-10-08T16:02:24.823Z",
+    "fromVideoId": "wG3nr37RwCs",
+    "toVideoId": "rcFymC8Q33w",
+    "reason": "broadcast_none",
+    "confidence": 80,
+    "matchedKeywords": [
+      "函館市",
+      "函館駅前"
+    ],
+    "channelId": "UCynX4LJTQ_H7_KPy7QiIS2A"
   }
 ]
