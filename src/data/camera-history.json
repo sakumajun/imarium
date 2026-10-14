@@ -119,5 +119,18 @@
       "函館駅前"
     ],
     "channelId": "UCynX4LJTQ_H7_KPy7QiIS2A"
+  },
+  {
+    "cameraId": "IM-0005",
+    "changedAt": "2026-10-14T14:15:51.810Z",
+    "fromVideoId": "rcFymC8Q33w",
+    "toVideoId": "AsmL4dRdXrA",
+    "reason": "broadcast_none",
+    "confidence": 80,
+    "matchedKeywords": [
+      "函館市",
+      "函館駅前"
+    ],
+    "channelId": "UCynX4LJTQ_H7_KPy7QiIS2A"
   }
 ]
