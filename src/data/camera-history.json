@@ -132,5 +132,18 @@
       "函館駅前"
     ],
     "channelId": "UCynX4LJTQ_H7_KPy7QiIS2A"
+  },
+  {
+    "cameraId": "IM-0009",
+    "changedAt": "2026-10-28T15:41:19.124Z",
+    "fromVideoId": "dq5WnCt5058",
+    "toVideoId": "Xkj_B_o2-is",
+    "reason": "broadcast_none",
+    "confidence": 80,
+    "matchedKeywords": [
+      "旭川市",
+      "旭川"
+    ],
+    "channelId": "UCJOKZ03IvVCbahaPloXPaww"
   }
 ]
