@@ -64,6 +64,7 @@ function verifiedChannelId(camera, item) {
   return null;
 }
 
+const claimedVideoIds = new Set(cameras.map(camera => camera.videoId).filter(Boolean));
 let unhealthy = 0, replaced = 0, discovered = 0;
 for (const camera of cameras) {
   const item = await getVideo(camera.videoId);
@@ -88,8 +89,17 @@ for (const camera of cameras) {
   const reason = !item ? 'video_not_found' : !embeddable ? 'embedding_disabled' : `broadcast_${broadcast ?? 'unknown'}`;
   const channelId = verifiedChannelId(camera, item);
   const successor = await discoverLiveOnChannel(camera, channelId);
+  if (successor && claimedVideoIds.has(successor.video.id) && successor.video.id !== camera.videoId) {
+    camera.status = 'review';
+    camera.healthReason = `${reason};successor_video_already_assigned`;
+    unhealthy++;
+    console.warn(`${camera.cameraId}: successor ${successor.video.id} already assigned; requires review.`);
+    continue;
+  }
   if (successor) {
     const oldVideoId = camera.videoId;
+    claimedVideoIds.delete(oldVideoId);
+    claimedVideoIds.add(successor.video.id);
     camera.videoId = successor.video.id;
     camera.channelId = successor.video.snippet?.channelId ?? channelId;
     camera.channelName = successor.video.snippet?.channelTitle ?? camera.channelName;
